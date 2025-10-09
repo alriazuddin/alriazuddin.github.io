@@ -5,20 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Al Riaz Uddin | Portfolio</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
     body {
-      font-family: "Segoe UI", sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
-      background: #f5f6fa;
+      background: #f0f4f8;
       color: #333;
+      scroll-behavior: smooth;
     }
     header {
-      background: linear-gradient(120deg, #0077b6, #0096c7);
+      background: linear-gradient(135deg, #0077b6, #00b4d8);
       color: white;
       text-align: center;
-      padding: 60px 20px;
+      padding: 80px 20px;
     }
     header h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 10px;
     }
     header p {
@@ -26,16 +28,21 @@
       opacity: 0.9;
     }
     main {
-      max-width: 900px;
-      margin: 30px auto;
+      max-width: 1000px;
+      margin: 40px auto;
       padding: 0 20px;
     }
     section {
       background: white;
-      margin-bottom: 25px;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     }
     h2 {
       border-left: 5px solid #00b4d8;
@@ -44,42 +51,57 @@
       margin-top: 0;
     }
     ul {
-      list-style: square;
-      padding-left: 20px;
+      list-style: none;
+      padding-left: 0;
+      columns: 2;
     }
-    .item {
-      margin-bottom: 10px;
+    li {
+      padding: 5px 0;
     }
     footer {
       text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
+      padding: 30px;
       background: #023e8a;
       color: white;
-      border-top: 5px solid #00b4d8;
+      margin-top: 40px;
     }
-    a {
-      color: #0077b6;
+    .social-links a {
+      color: white;
       text-decoration: none;
+      margin: 0 10px;
+      font-size: 1.2rem;
+      transition: color 0.2s;
     }
-    a:hover {
-      text-decoration: underline;
+    .social-links a:hover {
+      color: #00b4d8;
+    }
+    .item {
+      margin-bottom: 15px;
+    }
+    @media (max-width: 700px) {
+      ul {
+        columns: 1;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Al Riaz Uddin</h1>
-    <p>Bangladeshi Wikimedian | Administrator & CheckUser, Bangla Wikipedia | Co-Editor at WikiBarta</p>
+    <p>Bangladeshi Wikimedian | Administrator & CheckUser (Bangla Wikipedia) | Co-Editor at WikiBarta</p>
   </header>
 
   <main>
     <section>
       <h2>About</h2>
       <p>
-        Al Riaz Uddin is a Bangladeshi Wikimedian. He has been contributing to Wikimedia projects since 2017. 
-        Currently, he serves as an <strong>Administrator</strong> and <strong>CheckUser</strong> on Bangla Wikipedia. 
-        He is also a <strong>Co-Editor</strong> of <em>WikiBarta</em>, a magazine published by Wikimedia Bangladesh.
+        Al Riaz Uddin is a Bangladeshi Wikimedian who has been contributing to Wikimedia projects since 2017. 
+        He currently serves as an <strong>Administrator</strong> and <strong>CheckUser</strong> on Bangla Wikipedia, 
+        and as a <strong>Co-Editor</strong> of <em>WikiBarta</em> — a magazine published by Wikimedia Bangladesh.
       </p>
     </section>
 
@@ -94,23 +116,21 @@
       <div class="item">
         <strong>Bangla Wikipedia Administrator</strong> — July 2021 - Present<br />
         <p>
-          Administrators are Wikipedia editors granted the ability to perform special actions such as blocking/unblocking users, 
-          editing protected pages, protecting/unprotecting pages, deleting/undeleting pages, renaming pages, and using advanced tools.
+          Administrators can block users, edit protected pages, delete and restore content, and perform maintenance tasks to ensure Wikipedia’s smooth operation.
         </p>
       </div>
 
       <div class="item">
         <strong>Bangla Wikipedia CheckUser</strong> — May 2022 - Present<br />
         <p>
-          CheckUsers are trusted editors with access to private technical data (IP, user info) used to investigate sockpuppetry and abusive behavior. 
-          The Bangla Wikipedia currently has 2 CheckUsers.
+          CheckUsers access limited technical data to identify disruptive behavior or sockpuppetry, protecting the encyclopedia’s integrity.
         </p>
       </div>
 
       <div class="item">
         <strong>Co-Editor, WikiBarta</strong> — 2023 - Present<br />
         <p>
-          WikiBarta is a magazine published by Wikimedia Bangladesh, featuring stories, interviews, and updates from the Wikimedia community.
+          WikiBarta is a community magazine published by Wikimedia Bangladesh, featuring news, interviews, and contributor stories.
         </p>
       </div>
     </section>
@@ -118,32 +138,41 @@
     <section>
       <h2>Skills</h2>
       <ul>
-        <li>Microsoft Word, Excel, PowerPoint</li>
-        <li>Google Docs, Sheets, Forms</li>
-        <li>Presentation Skills & Public Speaking</li>
-        <li>Leadership & Organizational Management</li>
-        <li>Fact-checking & Digital Journalism</li>
-        <li>Digital Archiving, Wiki Markup, HTML</li>
-        <li>Blogging, Image Verifying</li>
+        <li>Microsoft Word</li>
+        <li>Microsoft Excel</li>
+        <li>Microsoft PowerPoint</li>
+        <li>Google Docs</li>
+        <li>Google Sheets</li>
+        <li>Google Forms</li>
+        <li>Presentation Skills</li>
+        <li>Public Speaking</li>
+        <li>Fact-checking</li>
+        <li>Organization Skills</li>
+        <li>Digital Journalism</li>
+        <li>HTML</li>
+        <li>Wiki Markup</li>
         <li>Online Cricket Scoring</li>
-        <li>Resume & CV Writing</li>
-        <li>Digital Literacy & Internet Safety</li>
-        <li>Teamwork & Volunteering</li>
+        <li>CV Writing</li>
       </ul>
     </section>
 
     <section>
       <h2>Languages</h2>
       <ul>
-<li>Chittagonian — Native</li>
-        <li>Bangla — Native</li>
-        <li>English — Proficient</li>
+        <li>Chittagonian</li>
+        <li>Bangla</li>
+        <li>English</li>
       </ul>
     </section>
   </main>
 
   <footer>
-    © 2025 Al Riaz Uddin
+    <div class="social-links">
+      <a href="https://twitter.com/alriazuddin" target="_blank">Twitter</a>
+      <a href="https://linkedin.com/in/alriazuddin" target="_blank">LinkedIn</a>
+    </div>
+    <p>© 2025 Al Riaz Uddin</p>
   </footer>
+
 </body>
 </html>
