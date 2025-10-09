@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Al Riaz Uddin | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
@@ -37,18 +39,19 @@
       margin-bottom: 30px;
       padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     section:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
     }
     h2 {
-      border-left: 5px solid #00b4d8;
-      padding-left: 10px;
+      border-left: 6px solid #00b4d8;
+      padding-left: 12px;
       color: #023e8a;
       margin-top: 0;
+      font-size: 1.5rem;
     }
     ul {
       list-style: none;
@@ -56,7 +59,15 @@
       columns: 2;
     }
     li {
-      padding: 5px 0;
+      padding: 6px 0;
+    }
+    .item {
+      margin-bottom: 15px;
+    }
+    .experience-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #0077b6;
     }
     footer {
       text-align: center;
@@ -68,15 +79,12 @@
     .social-links a {
       color: white;
       text-decoration: none;
-      margin: 0 10px;
+      margin: 0 12px;
       font-size: 1.2rem;
       transition: color 0.2s;
     }
     .social-links a:hover {
       color: #00b4d8;
-    }
-    .item {
-      margin-bottom: 15px;
     }
     @media (max-width: 700px) {
       ul {
@@ -92,14 +100,14 @@
 
   <header>
     <h1>Al Riaz Uddin</h1>
-    <p>Bangladeshi Wikimedian | Administrator & CheckUser (Bangla Wikipedia) | Co-Editor at WikiBarta</p>
+    <p>Bangladeshi Wikimedian | Administrator & CheckUser @ Bangla Wikipedia | Co-Editor @ WikiBarta</p>
   </header>
 
   <main>
     <section>
       <h2>About</h2>
       <p>
-        Al Riaz Uddin is a Bangladeshi Wikimedian who has been contributing to Wikimedia projects since 2017. 
+        Al Riaz Uddin is a Bangladeshi Wikimedian contributing to Wikimedia projects since 2017. 
         He currently serves as an <strong>Administrator</strong> and <strong>CheckUser</strong> on Bangla Wikipedia, 
         and as a <strong>Co-Editor</strong> of <em>WikiBarta</em> — a magazine published by Wikimedia Bangladesh.
       </p>
@@ -114,23 +122,26 @@
       <h2>Experience</h2>
 
       <div class="item">
-        <strong>Bangla Wikipedia Administrator</strong> — July 2021 - Present<br />
+        <div class="experience-title">Administrator, Bangla Wikipedia</div>
+        <p><em>July 2021 – Present</em></p>
         <p>
-          Administrators can block users, edit protected pages, delete and restore content, and perform maintenance tasks to ensure Wikipedia’s smooth operation.
+          Administrators can block/unblock users, edit protected pages, delete/restore pages, rename pages, and use advanced tools to manage Wikipedia efficiently.
         </p>
       </div>
 
       <div class="item">
-        <strong>Bangla Wikipedia CheckUser</strong> — May 2022 - Present<br />
+        <div class="experience-title">CheckUser, Bangla Wikipedia</div>
+        <p><em>May 2022 – Present</em></p>
         <p>
-          CheckUsers access limited technical data to identify disruptive behavior or sockpuppetry, protecting the encyclopedia’s integrity.
+          CheckUsers access limited technical data to identify disruptive behavior or sockpuppetry, ensuring the encyclopedia's integrity.
         </p>
       </div>
 
       <div class="item">
-        <strong>Co-Editor, WikiBarta</strong> — 2023 - Present<br />
+        <div class="experience-title">Co-Editor, WikiBarta</div>
+        <p><em>September 2023 – Present</em></p>
         <p>
-          WikiBarta is a community magazine published by Wikimedia Bangladesh, featuring news, interviews, and contributor stories.
+          WikiBarta is a community magazine published by Wikimedia Bangladesh, featuring stories, interviews, and updates from contributors.
         </p>
       </div>
     </section>
@@ -150,9 +161,9 @@
         <li>Organization Skills</li>
         <li>Digital Journalism</li>
         <li>HTML</li>
-        <li>Wiki Markup</li>
-        <li>Online Cricket Scoring</li>
         <li>CV Writing</li>
+ <li>Wiki Markup</li>
+        <li>Online Cricket Scoring</li>
       </ul>
     </section>
 
@@ -169,7 +180,7 @@
   <footer>
     <div class="social-links">
       <a href="https://twitter.com/alriazuddin" target="_blank">Twitter</a>
-      <a href="https://linkedin.com/in/alriazuddin" target="_blank">LinkedIn</a>
+      <a href="https://linkedin.com/in/alriazuddin" target="_blank"> LinkedIn</a>
     </div>
     <p>© 2025 Al Riaz Uddin</p>
   </footer>
