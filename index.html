@@ -34,6 +34,8 @@
     header {
       text-align: center;
       padding: 2.5rem 1rem 1rem;
+      border-bottom: 2px solid var(--accent);
+      margin-bottom: 1rem;
     }
     h1 {
       margin-bottom: 0.5rem;
@@ -64,6 +66,11 @@
       border-radius: 10px;
       margin: 0.7rem 0;
       box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .role:hover, .activity:hover, .certificate:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
     }
     .role h3, .activity h3 {
       margin: 0;
@@ -90,7 +97,9 @@
       text-decoration: none;
       color: var(--accent);
       margin: 0 10px;
-      font-weight: 500;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 1.05rem;
       transition: color 0.2s;
     }
     .social a:hover {
@@ -101,6 +110,7 @@
       padding: 2rem 0 1rem;
       font-size: 0.9rem;
       opacity: 0.7;
+      border-top: 1px solid rgba(0,0,0,0.1);
     }
     .theme-toggle {
       position: fixed;
@@ -132,6 +142,11 @@
     }
     .certificate a:hover {
       text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.6rem; }
+      h2 { font-size: 1.2rem; }
+      .skill { font-size: 0.8rem; }
     }
   </style>
 </head>
@@ -165,7 +180,7 @@
       <div class="role">
         <h3>Communication Lead – Bangla Wikiconnect</h3>
         <p><em>2025 – Present</em></p>
-        <p>Responsible for outreach, communication strategy, and community engagement under the Wikimedia Bangladesh initiatives.</p>
+        <p>Responsible for outreach, communication strategy, and community engagement.</p>
       </div>
       <div class="role">
         <h3>Co-Editor – WikiBarta</h3>
@@ -233,58 +248,66 @@
       </div>
     </section>
 
-    
-
     <section class="section">
       <h2>Certificates & Credentials</h2>
       <div class="certificates">
         <div class="certificate">
+          <h4>Digital Investigation Techniques (Master Certificate)</h4>
+          <p>by AFP</p>
+          <a href="https://digitalcourses.afp.com/certificates/ysi2qk50b3" target="_blank">Show credential</a>
+        </div>
+        <div class="certificate">
           <h4>Presentation & Public Speaking</h4>
-          <p>10 Minute School</p>
+          <p>by 10 Minute School</p>
           <a href="https://10minuteschool.com/certificate/6851802dae16d" target="_blank">Show credential</a>
         </div>
         <div class="certificate">
           <h4>Professional CV & Resume Writing</h4>
-          <p>Qlearn</p>
+          <p>by Qlearn</p>
           <a href="https://qlearn.com.bd/certificateCheck" target="_blank">Show credential</a>
         </div>
         <div class="certificate">
-          <h4>Digital Investigation Techniques</h4>
-          <p>(AFP)</p>
-          <a href="https://digitalcourses.afp.com/certificates/ysi2qk50b3" target="_blank">Show credential</a>
-        </div>
-        <div class="certificate">
           <h4>Microsoft Office Starter</h4>
-          <p>10 Minute School</p>
+          <p>by 10 Minute School</p>
           <a href="https://10minuteschool.com/certificate/678369ec1dc63" target="_blank">Show credential</a>
         </div>
         <div class="certificate">
+          <h4>Digital Literacy Course</h4>
+          <p>by ICT Division, Bangladesh</p>
+        </div>
+      
+        <div class="certificate">
           <h4>Volunteerism for Social Change</h4>
-          <p>BYLCx</p>
+          <p>by BYLCx</p>
         </div>
         <div class="certificate">
           <h4>Fact-checking Fundamentals</h4>
-          <p>International Fact-Checking Network (IFCN)</p>
+          <p>by International Fact-Checking Network (IFCN)</p>
         </div>
         <div class="certificate">
           <h4>Safety & Security in Digital Journalism</h4>
-          <p>Management & Resources Development Initiatives</p>
+          <p>by Management & Resources Development Initiatives (MRDI)</p>
         </div>
         <div class="certificate">
           <h4>Introduction to Digital Journalism</h4>
-          <p>Reuters</p>
+          <p>by Reuters</p>
           <a href="https://reutersdigitaljournalism.com/course_completed_certificate/187392.html?l=en" target="_blank">Show credential</a>
         </div>
         <div class="certificate">
           <h4>ECB ACO Basics of Scoring</h4>
-          <p>England & Wales Cricket Board</p>
+          <p>by England & Wales Cricket Board</p>
+        </div>
+        <div class="certificate">
+          <h4>Online Cricket Scoring</h4>
+          <p>by CricHeroes</p>
         </div>
       </div>
       <p style="text-align:center; margin-top:1rem;">
-        📜 All verified certificates and badges are available on <a href="https://linkedin.com/in/alriazuddin" target="_blank" style="color:var(--accent);">LinkedIn</a> profile.
+        All verified certificates and badges are available on <a href="https://linkedin.com/in/alriazuddin" target="_blank" style="color:var(--accent);">LinkedIn</a> profile.
       </p>
     </section>
-<section class="section">
+
+    <section class="section">
       <h2>Languages</h2>
       <div class="lang-list">
         <div class="skill">Chittagonian</div>
@@ -292,6 +315,7 @@
         <div class="skill">English</div>
       </div>
     </section>
+
   </div>
 
   <footer>
