@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
- <meta name="google-site-verification" content="W4apVrakxW4kloesalvHk_ezWMDzNhYq_ucNDasAA3M" />
+  <meta name="google-site-verification" content="W4apVrakxW4kloesalvHk_ezWMDzNhYq_ucNDasAA3M" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Al Riaz Uddin | Wikimedian Portfolio</title>
 
@@ -38,30 +38,16 @@
       border-bottom: 2px solid var(--accent);
       margin-bottom: 1rem;
     }
-    h1 {
-      margin-bottom: 0.5rem;
-      font-size: 2rem;
-    }
+    h1 { margin-bottom: 0.5rem; font-size: 2rem; }
     h2 {
       border-left: 4px solid var(--accent);
       padding-left: 8px;
       color: var(--accent);
       margin-top: 2.5rem;
     }
-    p {
-      max-width: 750px;
-      margin: 0.5rem auto;
-      font-size: 1rem;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 1rem 3rem;
-    }
-    .section {
-      margin-top: 2rem;
-    }
-    .role, .activity, .certificate {
+    p { max-width: 750px; margin: 0.5rem auto; font-size: 1rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1rem 3rem; }
+    .role, .activity, .certificate, .membership {
       background: var(--card-bg);
       padding: 1rem;
       border-radius: 10px;
@@ -69,35 +55,11 @@
       box-shadow: 0 1px 4px rgba(0,0,0,0.1);
       transition: 0.3s;
     }
-    .role:hover, .activity:hover, .certificate:hover {
+    .role:hover, .activity:hover, .certificate:hover, .membership:hover {
       transform: translateY(-3px);
       box-shadow: 0 3px 8px rgba(0,0,0,0.2);
     }
-    .role h3, .activity h3 {
-      margin: 0;
-      color: var(--accent);
-    }
-    .skills-list, .lang-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      justify-content: center;
-    }
-    .skill {
-      background: var(--card-bg);
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      padding: 0.4rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.9rem;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 0 1rem;
-      font-size: 0.9rem;
-      opacity: 0.7;
-      border-top: 1px solid rgba(0,0,0,0.1);
-    }
+    .role h3, .activity h3, .membership h3 { margin: 0; color: var(--accent); }
     .theme-toggle {
       position: fixed;
       top: 15px;
@@ -111,29 +73,6 @@
       cursor: pointer;
       color: var(--accent);
     }
-    .certificates {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
-    }
-    .certificate h4 {
-      margin: 0.2rem 0;
-    }
-    .certificate a {
-      display: inline-block;
-      margin-top: 0.4rem;
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .certificate a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 600px) {
-      h1 { font-size: 1.6rem; }
-      h2 { font-size: 1.2rem; }
-      .skill { font-size: 0.8rem; }
-    }
   </style>
 </head>
 <body>
@@ -143,74 +82,55 @@
     <h1>Al Riaz Uddin</h1>
     <p><strong>Bangladeshi Wikimedian & Tech Enthusiast</strong></p>
     <p>Administrator and CheckUser on Bangla Wikipedia | Co-editor of WikiBarta</p>
-    <div class="social">
-      <a href="https://linkedin.com/in/alriazuddin" target="_blank">LinkedIn</a>
-    </div>
   </header>
 
   <div class="container">
 
+    <!-- Key Roles -->
     <section class="section">
       <h2>Key Roles in Wikimedia</h2>
       <div class="role">
         <h3>Administrator – Bangla Wikipedia</h3>
         <p><em>July 2021 – Present</em></p>
-        <p>Granted advanced technical permissions including blocking/unblocking users, editing protected pages, deleting/restoring pages, and other administrative tools.</p>
       </div>
       <div class="role">
         <h3>CheckUser – Bangla Wikipedia</h3>
         <p><em>May 2022 – Present</em></p>
-        <p>Trusted user with access to private technical data for detecting sockpuppet accounts and protecting the community from abuse.</p>
       </div>
       <div class="role">
         <h3>Communication Lead – Bangla Wikiconnect</h3>
         <p><em>2025 – Present</em></p>
-        <p>Responsible for outreach, communication strategy, and community engagement.</p>
       </div>
       <div class="role">
         <h3>Co-Editor – WikiBarta</h3>
         <p><em>September 2023 – Present</em></p>
-        <p>Co-editor of WikiBarta, the official Wikimedia Bangladesh magazine featuring articles, interviews, and project highlights.</p>
       </div>
     </section>
 
+    <!-- Other Activities -->
     <section class="section">
       <h2>Other Activities in Wikimedia</h2>
-      <div class="activity">
-        <h3>Project Lead – Wiki Loves Children</h3>
-        <p><em>Bangla Wikipedia, 2025</em></p>
-      </div>
-      <div class="activity">
-        <h3>Organiser – Wiktionary Entry Contest</h3>
-        <p><em>Bangla Wiktionary, 2025</em></p>
-      </div>
-      <div class="activity">
-        <h3>Reviewer – Wikibooks Writing Competition</h3>
-        <p><em>Bangla Wikibooks, 2024</em></p>
-      </div>
-      <div class="activity">
-        <h3>Reviewer – Wiki Loves Children</h3>
-        <p><em>Bangla Wikibooks, 2021</em></p>
-      </div>
-      <div class="activity">
-        <h3>Co-ordinator – Islam Related Editathon</h3>
-        <p><em>2021, 2022, 2023, 2024, Bangla Wikipedia</em></p>
-      </div>
-      <div class="activity">
-        <h3>Organiser – Lokkhyo Ebar Lokkho (লক্ষ্য এবার লক্ষ)</h3>
-        <p><em>Bangla Wikipedia, 2020</em></p>
-      </div>
-      <div class="activity">
-        <h3>Author – WikiBarta</h3>
-        <p><em>2021 – Present</em></p>
-      </div>
+      <div class="activity"><h3>Project Lead – Wiki Loves Children</h3><p><em>Bangla Wikipedia, 2025</em></p></div>
+      <div class="activity"><h3>Organiser – Wiktionary Entry Contest</h3><p><em>Bangla Wiktionary, 2025</em></p></div>
+      <div class="activity"><h3>Reviewer – Wikibooks Writing Competition</h3><p><em>Bangla Wikibooks, 2024</em></p></div>
     </section>
 
+    <!-- Education -->
     <section class="section">
       <h2>Education</h2>
       <p><strong>International Islamic University Chittagong</strong></p>
     </section>
-
+    <section class="section">
+      <h2>Other Roles & Memberships</h2>
+      <div class="membership">
+        <h3>General Secretary – Madarsha Fotonta Fol Unnayan Songoton</h3>
+        <p><em>2019 – Present | Est. 1992</em></p>
+      </div>
+      <div class="membership">
+        <h3>Member – Wikimedia Bangladesh</h3>
+        <p><em>2021 – 2025</em></p>
+      </div>
+    </section>
     <section class="section">
       <h2>Skills</h2>
       <div class="skills-list">
@@ -332,5 +252,3 @@
   </script>
 </body>
 </html>
-
-
