@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
  <meta name="google-site-verification" content="W4apVrakxW4kloesalvHk_ezWMDzNhYq_ucNDasAA3M" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-width=1.0" />
   <title>Al Riaz Uddin | Wikimedian Portfolio</title>
 
   <meta name="description" content="Al Riaz Uddin - Bangladeshi Wikimedian, Administrator and CheckUser on Bangla Wikipedia.">
@@ -13,20 +13,20 @@
   <style>
     :root {
       --bg: #ffffff;
-      --text: #222;
+      --text: #000000; /* Light mode text color: Black */
       --card-bg: #f7f7f7;
-      --accent: #0078ff;
+      --accent: #0078ff; /* Accent color for headings */
     }
     [data-theme="dark"] {
       --bg: #0d1117;
-      --text: #e6edf3;
+      --text: #000000; /* Dark mode text color: Black (Per previous instruction, keeping text color black in dark mode) */
       --card-bg: #161b22;
       --accent: #58a6ff;
     }
     body {
       font-family: "Times New Roman", Times, serif;
       background: var(--bg);
-      color: var(--text);
+      color: var(--text); 
       margin: 0;
       line-height: 1.6;
       transition: background 0.3s, color 0.3s;
@@ -40,17 +40,27 @@
     h1 {
       margin-bottom: 0.5rem;
       font-size: 2rem;
+      color: var(--accent);
     }
     h2 {
       border-left: 4px solid var(--accent);
       padding-left: 8px;
-      color: var(--accent);
+      color: var(--accent); 
       margin-top: 2.5rem;
+    }
+    h3 {
+      color: var(--accent); 
+      margin: 0;
+    }
+    h4 {
+        color: var(--accent); 
+        margin: 0.2rem 0;
     }
     p {
       max-width: 750px;
       margin: 0.5rem auto;
       font-size: 1rem;
+      color: var(--text); 
     }
     .container {
       max-width: 900px;
@@ -72,10 +82,6 @@
       transform: translateY(-3px);
       box-shadow: 0 3px 8px rgba(0,0,0,0.2);
     }
-    .role h3, .activity h3 {
-      margin: 0;
-      color: var(--accent);
-    }
     .skills-list, .lang-list {
       display: flex;
       flex-wrap: wrap;
@@ -96,6 +102,7 @@
       font-size: 0.9rem;
       opacity: 0.7;
       border-top: 1px solid rgba(0,0,0,0.1);
+      color: var(--text);
     }
     .theme-toggle {
       position: fixed;
@@ -114,9 +121,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1rem;
-    }
-    .certificate h4 {
-      margin: 0.2rem 0;
     }
     .certificate a {
       display: inline-block;
@@ -301,7 +305,7 @@
         <p><em>2021, 2022, 2023, 2024, Bangla Wikipedia</em></p>
       </div>
       <div class="activity">
-        <h3>Organiser – Lokkhyo Ebar Lokkho (লক্ষ্য এবার লক্ষ)</h3>
+        <h3>Organiser – Lokkhyo Ebar Lokkho</h3>
         <p><em>Bangla Wikipedia, 2020</em></p>
       </div>
       <div class="activity">
@@ -322,7 +326,7 @@
       <h2>Languages</h2>
       <div class="lang-list">
         <div class="skill">Chittagonian</div>
-        <div class="skill">Bangla</div>
+        <div class="skill">Bangla (Bengali)</div>
         <div class="skill">English</div>
       </div>
     </section>
