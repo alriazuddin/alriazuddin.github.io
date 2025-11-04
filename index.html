@@ -11,18 +11,20 @@
   <meta property="og:type" content="website">
 
   <style>
-    /* রঙ পরিবর্তন: মেরুন (Maroon) ব্যবহার করা হলো */
+    /* রঙ পরিবর্তন: মেরুন (Maroon) ব্যবহার করা হলো প্রধান শিরোনামের জন্য */
     :root {
       --bg: #ffffff;
       --text: #000000; /* Light mode text color: Black */
       --card-bg: #f7f7f7;
-      --accent: #800000; /* পরিবর্তন: শিরোনামের রং মেরুন */
+      --accent: #800000; /* প্রধান শিরোনামের রং মেরুন */
+      --sub-accent: #FF8C00; /* নতুন: কনফারেন্সের জন্য কমলা রং */
     }
     [data-theme="dark"] {
       --bg: #0d1117;
       --text: #e6edf3; /* ফিক্স: ডার্ক মোডে লেখার রং সাদা/হালকা সাদা */
       --card-bg: #161b22;
-      --accent: #ff7f7f; /* পরিবর্তন: ডার্ক মোডে শিরোনামের রং হালকা মেরুন */
+      --accent: #ff7f7f; /* ডার্ক মোডে প্রধান শিরোনামের রং হালকা মেরুন */
+      --sub-accent: #FFA07A; /* নতুন: ডার্ক মোডে কনফারেন্সের জন্য হালকা কমলা */
     }
     body {
       font-family: "Times New Roman", Times, serif;
@@ -50,7 +52,7 @@
       margin-top: 2.5rem;
     }
     h3 {
-      color: var(--accent); 
+      color: var(--accent); /* বাকি h3, h4 এর জন্য মেরুন থাকবে */
       margin: 0;
     }
     h4 {
@@ -212,13 +214,13 @@
     <section class="section">
       <h2>Conference Participation</h2>
       <div class="activity">
-        <h3>IIUC Tech Fest 2023</h3>
+        <h3 style="color: var(--sub-accent);">IIUC Tech Fest 2023</h3>
       </div>
       <div class="activity">
-        <h3>International Conference on Innovations in Science, Engineering and Technology 2024 (ICISET 2024)</h3>
+        <h3 style="color: var(--sub-accent);">International Conference on Innovations in Science, Engineering and Technology 2024 (ICISET 2024)</h3>
       </div>
       <div class="activity">
-        <h3>Bangla WikiConference 2024</h3>
+        <h3 style="color: var(--sub-accent);">Bangla WikiConference 2024</h3>
       </div>
     </section>
 
