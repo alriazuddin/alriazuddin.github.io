@@ -11,19 +11,19 @@
   <meta property="og:type" content="website">
 
   <style>
-    /* রঙ পরিবর্তন: প্রধান শিরোনামের জন্য মেরুন, সাবহেডিংয়ের জন্য সবুজ */
+    /* রঙ পরিবর্তন: প্রধান শিরোনামের জন্য মেরুন, বাকি সব কিছুর জন্য সবুজ */
     :root {
       --bg: #ffffff;
-      --text: #000000; /* Light mode text color: Black */
+      --text: #000000; 
       --card-bg: #f7f7f7;
       --accent: #800000; /* প্রধান শিরোনামের রং (মেরুন) */
-      --sub-accent: #008000; /* সাবহেডিং/নামের রং (গভীর সবুজ) */
+      --sub-accent: #008000; /* সাবহেডিং/ভেতরের নাম/স্কিল-এর রং (গভীর সবুজ) */
     }
     [data-theme="dark"] {
       --bg: #0d1117;
-      --text: #e6edf3; /* ফিক্স: ডার্ক মোডে লেখার রং সাদা/হালকা সাদা */
+      --text: #e6edf3; 
       --card-bg: #161b22;
-      --accent: #ff7f7f; /* ডার্ক মোডে প্রধান শিরোনামের রং (হালকা মেরুন) */
+      --accent: #ff7f7f; 
       --sub-accent: #5CB85C; /* ডার্ক মোডে সাবহেডিং/নামের রং (হালকা সবুজ) */
     }
     body {
@@ -43,12 +43,12 @@
     h1 {
       margin-bottom: 0.5rem;
       font-size: 2rem;
-      color: var(--accent); /* প্রধান শিরোনামের রং */
+      color: var(--accent); 
     }
     h2 {
       border-left: 4px solid var(--accent);
       padding-left: 8px;
-      color: var(--accent); /* সেকশন শিরোনামের রং */
+      color: var(--accent); 
       margin-top: 2.5rem;
     }
     /* সমস্ত h3 এখন sub-accent রং ব্যবহার করবে */
@@ -61,7 +61,7 @@
         color: var(--sub-accent); 
         margin: 0.2rem 0;
     }
-    /* Italics/Date text will also use sub-accent color for consistency */
+    /* Italics/Date text will also use sub-accent color */
     em {
         color: var(--sub-accent);
         font-weight: 500;
@@ -99,10 +99,11 @@
       gap: 0.6rem;
       justify-content: center;
     }
+    /* .skill ক্লাসের রং পরিবর্তন করা হলো */
     .skill {
       background: var(--card-bg);
-      border: 1px solid var(--accent);
-      color: var(--accent);
+      border: 1px solid var(--sub-accent); /* বর্ডার এখন সবুজ */
+      color: var(--sub-accent); /* টেক্সট এখন সবুজ */
       padding: 0.4rem 0.8rem;
       border-radius: 20px;
       font-size: 0.9rem;
@@ -121,12 +122,12 @@
       right: 15px;
       background: var(--card-bg);
       border: 1px solid var(--accent);
+      color: var(--accent);
       border-radius: 50%;
       width: 40px;
       height: 40px;
       font-size: 1.2rem;
       cursor: pointer;
-      color: var(--accent);
     }
     .certificates {
       display: grid;
