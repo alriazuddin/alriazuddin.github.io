@@ -51,14 +51,22 @@
       color: var(--accent); /* সেকশন শিরোনামের রং */
       margin-top: 2.5rem;
     }
+    /* সমস্ত h3 এখন sub-accent রং ব্যবহার করবে */
     h3 {
-      color: var(--accent); /* বাকি h3 (Roles, Activities)-এর জন্য মেরুন থাকবে */
+      color: var(--sub-accent); 
       margin: 0;
     }
+    /* সমস্ত h4 এখন sub-accent রং ব্যবহার করবে */
     h4 {
-        color: var(--accent); /* Certificates section এর ভেতরেও h4 এর রং পরিবর্তন করা হবে নিচে */
+        color: var(--sub-accent); 
         margin: 0.2rem 0;
     }
+    /* Italics/Date text will also use sub-accent color for consistency */
+    em {
+        color: var(--sub-accent);
+        font-weight: 500;
+    }
+
     p {
       max-width: 750px;
       margin: 0.5rem auto;
@@ -125,11 +133,10 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1rem;
     }
-    /* সার্টিফিকেট ভেতরের লিঙ্কের রংও প্রধান রং (মেরুন) ব্যবহার করবে */
     .certificate a {
       display: inline-block;
       margin-top: 0.4rem;
-      color: var(--accent);
+      color: var(--accent); /* লিঙ্কগুলো প্রধান রং (মেরুন) ব্যবহার করবে */
       text-decoration: none;
       font-weight: 500;
     }
@@ -215,13 +222,13 @@
     <section class="section">
       <h2>Conference Participation</h2>
       <div class="activity">
-        <h3 style="color: var(--sub-accent);">IIUC Tech Fest 2023</h3>
+        <h3>IIUC Tech Fest 2023</h3>
       </div>
       <div class="activity">
-        <h3 style="color: var(--sub-accent);">International Conference on Innovations in Science, Engineering and Technology 2024 (ICISET 2024)</h3>
+        <h3>International Conference on Innovations in Science, Engineering and Technology 2024 (ICISET 2024)</h3>
       </div>
       <div class="activity">
-        <h3 style="color: var(--sub-accent);">Bangla WikiConference 2024</h3>
+        <h3>Bangla WikiConference 2024</h3>
       </div>
     </section>
 
@@ -229,52 +236,52 @@
       <h2>Certificates & Credentials</h2>
       <div class="certificates">
         <div class="certificate">
-          <h4 style="color: var(--sub-accent);">Digital Investigation Techniques (Master Certificate)</h4>
+          <h4>Digital Investigation Techniques (Master Certificate)</h4>
           <p>by AFP</p>
           <a href="https://digitalcourses.afp.com/certificates/ysi2qk50b3" target="_blank">Show credential</a>
         </div>
         <div class="certificate">
-          <h4 style="color: var(--sub-accent);">Introduction to Digital Journalism</h4>
+          <h4>Introduction to Digital Journalism</h4>
           <p>by Reuters</p>
           <a href="https://reutersdigitaljournalism.com/course_completed_certificate/187392.html?l=en" target="_blank">Show credential</a>
         </div>
         <div class="certificate">
-          <h4 style="color: var(--sub-accent);">Presentation & Public Speaking</h4>
+          <h4>Presentation & Public Speaking</h4>
           <p>by 10 Minute School</p>
           <a href="https://10minuteschool.com/certificate/6851802dae16d" target="_blank">Show credential</a>
         </div>
         <div class="certificate">
-          <h4 style="color: var(--sub-accent);">Professional CV & Resume Writing</h4>
+          <h4>Professional CV & Resume Writing</h4>
           <p>by Qlearn</p>
           <a href="https://qlearn.com.bd/certificateCheck" target="_blank">Show credential</a>
         </div>
         <div class="certificate">
-          <h4 style="color: var(--sub-accent);">Microsoft Office Starter</h4>
+          <h4>Microsoft Office Starter</h4>
           <p>by 10 Minute School</p>
           <a href="https://10minuteschool.com/certificate/678369ec1dc63" target="_blank">Show credential</a>
         </div>
         <div class="certificate">
-          <h4 style="color: var(--sub-accent);">Digital Literacy Course</h4>
+          <h4>Digital Literacy Course</h4>
           <p>by ICT Division, Bangladesh</p>
         </div>
         <div class="certificate">
-          <h4 style="color: var(--sub-accent);">Online Cricket Scoring</h4>
+          <h4>Online Cricket Scoring</h4>
           <p>by CricHeroes</p>
         </div>
         <div class="certificate">
-          <h4 style="color: var(--sub-accent);">Volunteerism for Social Change</h4>
+          <h4>Volunteerism for Social Change</h4>
           <p>by BYLCx</p>
         </div>
         <div class="certificate">
-          <h4 style="color: var(--sub-accent);">Fact-checking Fundamentals</h4>
+          <h4>Fact-checking Fundamentals</h4>
           <p>by International Fact-Checking Network (IFCN)</p>
         </div>
         <div class="certificate">
-          <h4 style="color: var(--sub-accent);">Safety & Security in Digital Journalism</h4>
+          <h4>Safety & Security in Digital Journalism</h4>
           <p>by Management & Resources Development Initiatives (MRDI)</p>
         </div>
         <div class="certificate">
-          <h4 style="color: var(--sub-accent);">ECB ACO Basics of Scoring</h4>
+          <h4>ECB ACO Basics of Scoring</h4>
           <p>by England & Wales Cricket Board</p>
         </div>
       </div>
@@ -327,7 +334,7 @@
       <h2>Languages</h2>
       <div class="lang-list">
         <div class="skill">Chittagonian</div>
-        <div class="skill">Bangla (Bengali)</div>
+        <div class="skill">Bangla</div>
         <div class="skill">English</div>
       </div>
     </section>
