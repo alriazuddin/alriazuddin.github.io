@@ -17,15 +17,20 @@
       --text: #222;
       --card-bg: #f7f7f7;
       --accent: #0078ff;
+      --border: #e1e4e8;
     }
     [data-theme="dark"] {
       --bg: #0d1117;
       --text: #e6edf3;
       --card-bg: #161b22;
       --accent: #58a6ff;
+      --border: #30363d;
+    }
+    * {
+      box-sizing: border-box;
     }
     body {
-      font-family: "Times New Roman", Times, serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
       margin: 0;
@@ -34,49 +39,146 @@
     }
     header {
       text-align: center;
-      padding: 2.5rem 1rem 1rem;
+      padding: 3rem 1rem 2rem;
       border-bottom: 2px solid var(--accent);
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
     }
-    h1 { margin-bottom: 0.5rem; font-size: 2rem; }
+    h1 { 
+      margin-bottom: 0.5rem; 
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
     h2 {
       border-left: 4px solid var(--accent);
-      padding-left: 8px;
+      padding-left: 12px;
       color: var(--accent);
-      margin-top: 2.5rem;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      font-weight: 600;
     }
-    p { max-width: 750px; margin: 0.5rem auto; font-size: 1rem; }
-    .container { max-width: 900px; margin: 0 auto; padding: 0 1rem 3rem; }
+    h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    h4 {
+      margin: 0 0 0.3rem 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    p { 
+      max-width: 750px; 
+      margin: 0.5rem auto; 
+      font-size: 1rem; 
+    }
+    .container { 
+      max-width: 900px; 
+      margin: 0 auto; 
+      padding: 0 1.5rem 3rem; 
+    }
     .role, .activity, .certificate, .membership {
       background: var(--card-bg);
-      padding: 1rem;
-      border-radius: 10px;
-      margin: 0.7rem 0;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-      transition: 0.3s;
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      border: 1px solid var(--border);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
     .role:hover, .activity:hover, .certificate:hover, .membership:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-    .role h3, .activity h3, .membership h3 { margin: 0; color: var(--accent); }
+    .role h3, .activity h3, .membership h3 { 
+      color: var(--accent); 
+    }
+    .role p, .activity p, .membership p {
+      margin: 0.3rem 0 0 0;
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+    .certificate p {
+      margin: 0.3rem 0;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+    .certificate a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+      border-bottom: 1px solid transparent;
+      transition: border-bottom 0.2s;
+    }
+    .certificate a:hover {
+      border-bottom: 1px solid var(--accent);
+    }
+    .skills-list, .lang-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .skill {
+      background: var(--card-bg);
+      padding: 0.6rem 1rem;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    .skill:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-2px);
+    }
     .theme-toggle {
       position: fixed;
-      top: 15px;
-      right: 15px;
+      top: 20px;
+      right: 20px;
       background: var(--card-bg);
-      border: 1px solid var(--accent);
+      border: 2px solid var(--accent);
       border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 1.2rem;
+      width: 50px;
+      height: 50px;
+      font-size: 1.3rem;
       cursor: pointer;
-      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      z-index: 1000;
+    }
+    .theme-toggle:hover {
+      transform: rotate(20deg) scale(1.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; }
+      .container { padding: 0 1rem 2rem; }
+      .theme-toggle {
+        width: 45px;
+        height: 45px;
+        top: 15px;
+        right: 15px;
+      }
     }
   </style>
 </head>
 <body>
-  <button class="theme-toggle" id="themeToggle">🌙</button>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
 
   <header>
     <h1>Al Riaz Uddin</h1>
@@ -110,16 +212,29 @@
     <!-- Other Activities -->
     <section class="section">
       <h2>Other Activities in Wikimedia</h2>
-      <div class="activity"><h3>Project Lead – Wiki Loves Children</h3><p><em>Bangla Wikipedia, 2025</em></p></div>
-      <div class="activity"><h3>Organiser – Wiktionary Entry Contest</h3><p><em>Bangla Wiktionary, 2025</em></p></div>
-      <div class="activity"><h3>Reviewer – Wikibooks Writing Competition</h3><p><em>Bangla Wikibooks, 2024</em></p></div>
+      <div class="activity">
+        <h3>Project Lead – Wiki Loves Children</h3>
+        <p><em>Bangla Wikipedia, 2025</em></p>
+      </div>
+      <div class="activity">
+        <h3>Organiser – Wiktionary Entry Contest</h3>
+        <p><em>Bangla Wiktionary, 2025</em></p>
+      </div>
+      <div class="activity">
+        <h3>Reviewer – Wikibooks Writing Competition</h3>
+        <p><em>Bangla Wikibooks, 2024</em></p>
+      </div>
     </section>
 
     <!-- Education -->
     <section class="section">
       <h2>Education</h2>
-      <p><strong>International Islamic University Chittagong</strong></p>
+      <div class="role">
+        <h3>International Islamic University Chittagong</h3>
+      </div>
     </section>
+
+    <!-- Other Roles & Memberships -->
     <section class="section">
       <h2>Other Roles & Memberships</h2>
       <div class="membership">
@@ -131,10 +246,11 @@
         <p><em>2021 – 2025</em></p>
       </div>
     </section>
+
+    <!-- Skills -->
     <section class="section">
       <h2>Skills</h2>
       <div class="skills-list">
-        <!-- Technical Skills -->
         <div class="skill">Microsoft Word</div>
         <div class="skill">Microsoft Excel</div>
         <div class="skill">Microsoft PowerPoint</div>
@@ -143,53 +259,49 @@
         <div class="skill">Google Forms</div>
         <div class="skill">HTML</div>
         <div class="skill">Wiki Markup</div>
-
-        <!-- Soft / Communication Skills -->
         <div class="skill">Presentation Skill</div>
         <div class="skill">Public Speaking</div>
         <div class="skill">Fact-checking</div>
         <div class="skill">Organizational Skill</div>
         <div class="skill">Digital Journalism</div>
-
-        <!-- Additional / Creative Skills -->
         <div class="skill">Digital Marketing</div>
         <div class="skill">SEO (Intermediate)</div>
-        <div class="skill">WordPress & Blogger (Intermediate)</div>
-        <div class="skill">Graphics Design (Intermediate)</div>
-        <div class="skill">Video Editing (Basics)</div>
- <div class="skill">CV Writing</div>
+        <div class="skill">WordPress & Blogger</div>
+        <div class="skill">Graphics Design</div>
+        <div class="skill">Video Editing</div>
+        <div class="skill">CV Writing</div>
         <div class="skill">Online Cricket Scoring</div>
-       
       </div>
     </section>
 
+    <!-- Certificates -->
     <section class="section">
       <h2>Certificates & Credentials</h2>
       <div class="certificates">
         <div class="certificate">
           <h4>Digital Investigation Techniques (Master Certificate)</h4>
           <p>by AFP</p>
-          <a href="https://digitalcourses.afp.com/certificates/ysi2qk50b3" target="_blank">Show credential</a>
+          <a href="https://digitalcourses.afp.com/certificates/ysi2qk50b3" target="_blank" rel="noopener">Show credential →</a>
         </div>
         <div class="certificate">
           <h4>Introduction to Digital Journalism</h4>
           <p>by Reuters</p>
-          <a href="https://reutersdigitaljournalism.com/course_completed_certificate/187392.html?l=en" target="_blank">Show credential</a>
+          <a href="https://reutersdigitaljournalism.com/course_completed_certificate/187392.html?l=en" target="_blank" rel="noopener">Show credential →</a>
         </div>
         <div class="certificate">
           <h4>Presentation & Public Speaking</h4>
           <p>by 10 Minute School</p>
-          <a href="https://10minuteschool.com/certificate/6851802dae16d" target="_blank">Show credential</a>
+          <a href="https://10minuteschool.com/certificate/6851802dae16d" target="_blank" rel="noopener">Show credential →</a>
         </div>
         <div class="certificate">
           <h4>Professional CV & Resume Writing</h4>
           <p>by Qlearn</p>
-          <a href="https://qlearn.com.bd/certificateCheck" target="_blank">Show credential</a>
+          <a href="https://qlearn.com.bd/certificateCheck" target="_blank" rel="noopener">Show credential →</a>
         </div>
         <div class="certificate">
           <h4>Microsoft Office Starter</h4>
           <p>by 10 Minute School</p>
-          <a href="https://10minuteschool.com/certificate/678369ec1dc63" target="_blank">Show credential</a>
+          <a href="https://10minuteschool.com/certificate/678369ec1dc63" target="_blank" rel="noopener">Show credential →</a>
         </div>
         <div class="certificate">
           <h4>Digital Literacy Course</h4>
@@ -216,11 +328,12 @@
           <p>by England & Wales Cricket Board</p>
         </div>
       </div>
-      <p style="text-align:center; margin-top:1rem;">
-        All verified certificates are available on <a href="https://linkedin.com/in/alriazuddin" target="_blank" style="color:var(--accent);">LinkedIn</a> profile.
+      <p style="text-align:center; margin-top:1.5rem;">
+        All verified certificates are available on <a href="https://linkedin.com/in/alriazuddin" target="_blank" rel="noopener" style="color:var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent);">LinkedIn profile</a>.
       </p>
     </section>
 
+    <!-- Languages -->
     <section class="section">
       <h2>Languages</h2>
       <div class="lang-list">
@@ -239,14 +352,24 @@
   <script>
     const toggle = document.getElementById('themeToggle');
     const body = document.body;
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      body.setAttribute('data-theme', 'dark');
+      toggle.textContent = '☀️';
+    }
+    
     toggle.addEventListener('click', () => {
       const currentTheme = body.getAttribute('data-theme');
       if (currentTheme === 'dark') {
         body.removeAttribute('data-theme');
         toggle.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
       } else {
         body.setAttribute('data-theme', 'dark');
         toggle.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
       }
     });
   </script>
