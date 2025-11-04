@@ -11,20 +11,20 @@
   <meta property="og:type" content="website">
 
   <style>
-    /* রঙ পরিবর্তন: মেরুন (Maroon) ব্যবহার করা হলো প্রধান শিরোনামের জন্য */
+    /* রঙ পরিবর্তন: প্রধান শিরোনামের জন্য মেরুন, সাবহেডিংয়ের জন্য সবুজ */
     :root {
       --bg: #ffffff;
       --text: #000000; /* Light mode text color: Black */
       --card-bg: #f7f7f7;
-      --accent: #800000; /* প্রধান শিরোনামের রং মেরুন */
-      --sub-accent: #FF8C00; /* নতুন: কনফারেন্সের জন্য কমলা রং */
+      --accent: #800000; /* প্রধান শিরোনামের রং (মেরুন) */
+      --sub-accent: #008000; /* সাবহেডিং/নামের রং (গভীর সবুজ) */
     }
     [data-theme="dark"] {
       --bg: #0d1117;
       --text: #e6edf3; /* ফিক্স: ডার্ক মোডে লেখার রং সাদা/হালকা সাদা */
       --card-bg: #161b22;
-      --accent: #ff7f7f; /* ডার্ক মোডে প্রধান শিরোনামের রং হালকা মেরুন */
-      --sub-accent: #FFA07A; /* নতুন: ডার্ক মোডে কনফারেন্সের জন্য হালকা কমলা */
+      --accent: #ff7f7f; /* ডার্ক মোডে প্রধান শিরোনামের রং (হালকা মেরুন) */
+      --sub-accent: #5CB85C; /* ডার্ক মোডে সাবহেডিং/নামের রং (হালকা সবুজ) */
     }
     body {
       font-family: "Times New Roman", Times, serif;
@@ -43,20 +43,20 @@
     h1 {
       margin-bottom: 0.5rem;
       font-size: 2rem;
-      color: var(--accent);
+      color: var(--accent); /* প্রধান শিরোনামের রং */
     }
     h2 {
       border-left: 4px solid var(--accent);
       padding-left: 8px;
-      color: var(--accent); 
+      color: var(--accent); /* সেকশন শিরোনামের রং */
       margin-top: 2.5rem;
     }
     h3 {
-      color: var(--accent); /* বাকি h3, h4 এর জন্য মেরুন থাকবে */
+      color: var(--accent); /* বাকি h3 (Roles, Activities)-এর জন্য মেরুন থাকবে */
       margin: 0;
     }
     h4 {
-        color: var(--accent); 
+        color: var(--accent); /* Certificates section এর ভেতরেও h4 এর রং পরিবর্তন করা হবে নিচে */
         margin: 0.2rem 0;
     }
     p {
@@ -125,6 +125,7 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1rem;
     }
+    /* সার্টিফিকেট ভেতরের লিঙ্কের রংও প্রধান রং (মেরুন) ব্যবহার করবে */
     .certificate a {
       display: inline-block;
       margin-top: 0.4rem;
@@ -228,52 +229,52 @@
       <h2>Certificates & Credentials</h2>
       <div class="certificates">
         <div class="certificate">
-          <h4>Digital Investigation Techniques (Master Certificate)</h4>
+          <h4 style="color: var(--sub-accent);">Digital Investigation Techniques (Master Certificate)</h4>
           <p>by AFP</p>
           <a href="https://digitalcourses.afp.com/certificates/ysi2qk50b3" target="_blank">Show credential</a>
         </div>
         <div class="certificate">
-          <h4>Introduction to Digital Journalism</h4>
+          <h4 style="color: var(--sub-accent);">Introduction to Digital Journalism</h4>
           <p>by Reuters</p>
           <a href="https://reutersdigitaljournalism.com/course_completed_certificate/187392.html?l=en" target="_blank">Show credential</a>
         </div>
         <div class="certificate">
-          <h4>Presentation & Public Speaking</h4>
+          <h4 style="color: var(--sub-accent);">Presentation & Public Speaking</h4>
           <p>by 10 Minute School</p>
           <a href="https://10minuteschool.com/certificate/6851802dae16d" target="_blank">Show credential</a>
         </div>
         <div class="certificate">
-          <h4>Professional CV & Resume Writing</h4>
+          <h4 style="color: var(--sub-accent);">Professional CV & Resume Writing</h4>
           <p>by Qlearn</p>
           <a href="https://qlearn.com.bd/certificateCheck" target="_blank">Show credential</a>
         </div>
         <div class="certificate">
-          <h4>Microsoft Office Starter</h4>
+          <h4 style="color: var(--sub-accent);">Microsoft Office Starter</h4>
           <p>by 10 Minute School</p>
           <a href="https://10minuteschool.com/certificate/678369ec1dc63" target="_blank">Show credential</a>
         </div>
         <div class="certificate">
-          <h4>Digital Literacy Course</h4>
+          <h4 style="color: var(--sub-accent);">Digital Literacy Course</h4>
           <p>by ICT Division, Bangladesh</p>
         </div>
         <div class="certificate">
-          <h4>Online Cricket Scoring</h4>
+          <h4 style="color: var(--sub-accent);">Online Cricket Scoring</h4>
           <p>by CricHeroes</p>
         </div>
         <div class="certificate">
-          <h4>Volunteerism for Social Change</h4>
+          <h4 style="color: var(--sub-accent);">Volunteerism for Social Change</h4>
           <p>by BYLCx</p>
         </div>
         <div class="certificate">
-          <h4>Fact-checking Fundamentals</h4>
+          <h4 style="color: var(--sub-accent);">Fact-checking Fundamentals</h4>
           <p>by International Fact-Checking Network (IFCN)</p>
         </div>
         <div class="certificate">
-          <h4>Safety & Security in Digital Journalism</h4>
+          <h4 style="color: var(--sub-accent);">Safety & Security in Digital Journalism</h4>
           <p>by Management & Resources Development Initiatives (MRDI)</p>
         </div>
         <div class="certificate">
-          <h4>ECB ACO Basics of Scoring</h4>
+          <h4 style="color: var(--sub-accent);">ECB ACO Basics of Scoring</h4>
           <p>by England & Wales Cricket Board</p>
         </div>
       </div>
