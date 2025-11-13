@@ -1,46 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Al Riaz Uddin | Portfolio</title>
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="bg-white text-gray-900 transition-all duration-300" id="bodyRoot">
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-200 transition">
 
-  <!-- Header Component -->
   <div id="header-component"></div>
 
   <main class="max-w-4xl mx-auto px-4 py-8">
-
-    <!-- Projects Component -->
     <div id="projects-component"></div>
-
+    <div id="all-sections-component"></div>
   </main>
 
-  <!-- Footer Component -->
   <div id="footer-component"></div>
 
-  <!-- Load Components + Scripts -->
   <script src="script.js"></script>
+
   <script>
-    // Load HTML components dynamically
     async function loadComponent(id, file) {
-      const target = document.getElementById(id);
-      const response = await fetch(file);
-      const html = await response.text();
-      target.innerHTML = html;
+      const el = document.getElementById(id);
+      const res = await fetch(file);
+      el.innerHTML = await res.text();
     }
 
-    loadComponent("header-component", "components/header.html");
-    loadComponent("projects-component", "components/projects.html");
-    loadComponent("footer-component", "components/footer.html");
+    loadComponent("header-component", "header.html");
+    loadComponent("projects-component", "projects.html");
+    loadComponent("all-sections-component", "all-sections.html");
+    loadComponent("footer-component", "footer.html");
   </script>
 
 </body>
