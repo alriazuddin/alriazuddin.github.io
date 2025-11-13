@@ -1,41 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="google-site-verification" content="W4apVrakxW4kloesalvHk_ezWMDzNhYq_ucNDasAA3M" />
+  <meta name="viewport" content="width=device-width, initial-width=1.0" />
   <title>Al Riaz Uddin | Portfolio</title>
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="Al Riaz Uddin - Bangladeshi Wikimedian, Administrator and CheckUser on Bangla Wikipedia.">
+  <meta property="og:title" content="Al Riaz Uddin | Wikimedian Portfolio">
+  <meta property="og:type" content="website">
 
-  <link rel="stylesheet" href="styles.css">
-</head>
-
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-200 transition">
-
-  <div id="header-component"></div>
-
-  <main class="max-w-4xl mx-auto px-4 py-8">
-    <div id="projects-component"></div>
-    <div id="all-sections-component"></div>
-  </main>
-
-  <div id="footer-component"></div>
-
-  <script src="script.js"></script>
-
-  <script>
-    async function loadComponent(id, file) {
-      const el = document.getElementById(id);
-      const res = await fetch(file);
-      el.innerHTML = await res.text();
+  <style>
+    /* রঙ পরিবর্তন: প্রধান শিরোনামের জন্য মেরুন, বাকি সব কিছুর জন্য সবুজ */
+    :root {
+      --bg: #ffffff;
+      --text: #000000; 
+      --card-bg: #f7f7f7;
+      --accent: #800000; /* প্রধান শিরোনামের রং (মেরুন) */
+      --sub-accent: #008000; /* সাবহেডিং/ভেতরের নাম/স্কিল-এর রং (গভীর সবুজ) */
+    }
+    [data-theme="dark"] {
+      --bg: #0d1117;
+      --text: #e6edf3; 
+      --card-bg: #161b22;
+      --accent: #ff7f7f; 
+      --sub-accent: #5CB85C; /* ডার্ক মোডে সাবহেডিং/নামের রং (হালকা সবুজ) */
+    }
+    body {
+      font-family: "Times New Roman", Times, serif;
+      background: var(--bg);
+      color: var(--text); 
+      margin: 0;
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      text-align: center;
+      padding: 2.5rem 1rem 1rem;
+      border-bottom: 2px solid var(--accent);
+      margin-bottom: 1rem;
+    }
+    h1 {
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+      color: var(--accent); 
+    }
+    h2 {
+      border-left: 4px solid var(--accent);
+      padding-left: 8px;
+      color: var(--accent); 
+      margin-top: 2.5rem;
+    }
+    /* সমস্ত h3 এখন sub-accent রং ব্যবহার করবে */
+    h3 {
+      color: var(--sub-accent); 
+      margin: 0;
+    }
+    /* সমস্ত h4 এখন sub-accent রং ব্যবহার করবে */
+    h4 {
+        color: var(--sub-accent); 
+        margin: 0.2rem 0;
+    }
+    /* Italics/Date text will also use sub-accent color */
+    em {
+        color: var(--sub-accent);
+        font-weight: 500;
     }
 
-    loadComponent("header-component", "header.html");
-    loadComponent("projects-component", "projects.html");
-    loadComponent("all-sections-component", "all-sections.html");
-    loadComponent("footer-component", "footer.html");
-  </script>
+    p {
+      max-width: 750px;
+      margin: 0.5rem auto;
+      font-size: 1rem;
+      color: var(--text); 
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+    }
+    .section {
+      margin-top: 2rem;
+    }
+    .role, .activity, .certificate {
+      background: var(--card-bg);
+      padding: 1rem;
+      border-radius: 10px;
+      margin: 0.7rem 0;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .role:hover, .activity:hover, .certificate:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+    .skills-list, .lang-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: center;
+    }
+    /* .skill ক্লাসের রং পরিবর্তন করা হলো */
+    .skill {
+      background: var(--card-bg);
+      border: 1px solid var(--sub-accent); /* বর্ডার এখন সবুজ */
+      color: var(--sub-accent); /* টেক্সট এখন সবুজ */
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 0 1rem;
+      font-size: 0.9rem;
+      opacity: 0.7;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      color: var(--text);
+    }
+    .theme-toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: var(--card-bg);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    .certificates {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .certificate a {
+      display: inline-block;
+      margin-top: 0.4rem;
+      color: var(--accent); /* লিঙ্কগুলো প্রধান রং (মেরুন) ব্যবহার করবে */
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .certificate a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.6rem; }
+      h2 { font-size: 1.2rem; }
+      .skill { font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" id="themeToggle">🌙</button>
 
+  <header>
+    <h1>Al Riaz Uddin</h1>
+    <p><strong>Engineering Student | Tech Enthusiast | Wikimedian</strong></p>
+    <p>Administrator & CheckUser on Bangla Wikipedia | Co-editor of WikiBarta</p>
+    <div class="social">
+      <a href="https://linkedin.com/in/alriazuddin" target="_blank">LinkedIn</a>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <section class="section">
+      <h2>Key Roles in Wikimedia</h2>
+      <div class="role">
+        <h3>Administrator – Bangla Wikipedia</h3>
+        <p><em>July 2021 – Present</em></p>
+        <p>Granted advanced technical permissions including blocking/unblocking users, editing protected pages, deleting/restoring pages, and other administrative tools.</p>
+      </div>
+      <div class="role">
+        <h3>CheckUser – Bangla Wikipedia</h3>
+        <p><em>May 2022 – Present</em></p>
+        <p>Trusted user with access to private technical data for detecting sockpuppet accounts and protecting the community from abuse.</p>
+      </div>
+      <div class="role">
+        <h3>Communication Lead – Bangla Wikiconnect</h3>
+        <p><em>2025 – Present</em></p>
+        <p>Responsible for outreach, communication strategy, and community engagement.</p>
+      </div>
+      <div class="role">
+        <h3>Co-Editor – WikiBarta</h3>
+        <p><em>September 2023 – Present</em></p>
+        <p>Co-editor of WikiBarta, the official Wikimedia Bangladesh magazine featuring articles, interviews, and project highlights.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Education</h2>
+      <p><strong>International Islamic University Chittagong</strong></p>
+    </section>
+
+    <section class="section">
+      <h2>Skills</h2>
+      <div class="skills-list">
+        <div class="skill">Microsoft Word</div>
+        <div class="skill">Microsoft Excel</div>
+        <div class="skill">Microsoft PowerPoint</div>
+        <div class="skill">Google Docs</div>
+        <div class="skill">Google Sheets</div>
+        <div class="skill">Google Forms</div>
+        <div class="skill">HTML</div>
+        <div class="skill">Wiki Markup</div>
+        <div class="skill">Presentation Skill</div>
+        <div class="skill">Public Speaking</div>
+        <div class="skill">Fact-checking</div>
+        <div class="skill">Organizational Skill</div>
+        <div class="skill">Digital Journalism</div>
+        <div class="skill">Digital Marketing</div>
+        <div class="skill">SEO (Intermediate)</div>
+        <div class="skill">WordPress & Blogger (Intermediate)</div>
+        <div class="skill">Graphics Design (Intermediate)</div>
+        <div class="skill">Video Editing (Basics)</div>
+        <div class="skill">CV Writing</div>
+        <div class="skill">Online Cricket Scoring</div>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2>Conference & Fest Participation</h2>
+      <div class="activity">
+        <h3>International Conference on Innovations in Science, Engineering and Technology 2024 (ICISET 2024)</h3>
+      </div>
+      <div class="activity">
+        <h3>Bangla WikiConference 2024</h3>
+      </div>
+      <div class="activity">
+        <h3>IIUC Tech Fest 2023</h3>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Certificates & Credentials</h2>
+      <div class="certificates">
+        <div class="certificate">
+          <h4>Digital Investigation Techniques (Master Certificate)</h4>
+          <p>by AFP</p>
+          <a href="https://digitalcourses.afp.com/certificates/ysi2qk50b3" target="_blank">Show credential</a>
+        </div>
+        <div class="certificate">
+          <h4>Introduction to Digital Journalism</h4>
+          <p>by Reuters</p>
+          <a href="https://reutersdigitaljournalism.com/course_completed_certificate/187392.html?l=en" target="_blank">Show credential</a>
+        </div>
+        <div class="certificate">
+          <h4>Presentation & Public Speaking</h4>
+          <p>by 10 Minute School</p>
+          <a href="https://10minuteschool.com/certificate/6851802dae16d" target="_blank">Show credential</a>
+        </div>
+        <div class="certificate">
+          <h4>Professional CV & Resume Writing</h4>
+          <p>by Qlearn</p>
+          <a href="https://qlearn.com.bd/certificateCheck" target="_blank">Show credential</a>
+        </div>
+        <div class="certificate">
+          <h4>Microsoft Office Starter</h4>
+          <p>by 10 Minute School</p>
+          <a href="https://10minuteschool.com/certificate/678369ec1dc63" target="_blank">Show credential</a>
+        </div>
+        <div class="certificate">
+          <h4>Digital Literacy Course</h4>
+          <p>by ICT Division, Bangladesh</p>
+        </div>
+        <div class="certificate">
+          <h4>Online Cricket Scoring</h4>
+          <p>by CricHeroes</p>
+        </div>
+        <div class="certificate">
+          <h4>Volunteerism for Social Change</h4>
+          <p>by BYLCx</p>
+        </div>
+        <div class="certificate">
+          <h4>Fact-checking Fundamentals</h4>
+          <p>by International Fact-Checking Network (IFCN)</p>
+        </div>
+        <div class="certificate">
+          <h4>Safety & Security in Digital Journalism</h4>
+          <p>by Management & Resources Development Initiatives (MRDI)</p>
+        </div>
+        <div class="certificate">
+          <h4>ECB ACO Basics of Scoring</h4>
+          <p>by England & Wales Cricket Board</p>
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:1rem;">
+        All verified certificates are available on <a href="https://linkedin.com/in/alriazuddin" target="_blank" style="color:var(--accent);">LinkedIn</a> profile.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Roles, Activities & Memberships</h2>
+      <div class="activity">
+        <h3>General Secretary – Madarsha Fotonta Fol Unnayan Songoton (Est: 1992)</h3>
+        <p><em>2019–Present</em></p>
+      </div>
+      <div class="activity">
+        <h3>Project Lead – Wiki Loves Children</h3>
+        <p><em>Bangla Wikipedia, 2025</em></p>
+      </div>
+      <div class="activity">
+        <h3>Organiser – Wiktionary Entry Contest</h3>
+        <p><em>Bangla Wiktionary, 2025</em></p>
+      </div>
+      <div class="activity">
+        <h3>Reviewer – Wikibooks Writing Competition</h3>
+        <p><em>Bangla Wikibooks, 2024</em></p>
+      </div>
+      <div class="activity">
+        <h3>Reviewer – Wiki Loves Children</h3>
+        <p><em>Bangla Wikibooks, 2021</em></p>
+      </div>
+      <div class="activity">
+        <h3>Co-ordinator – Islam Related Editathon</h3>
+        <p><em>2021, 2022, 2023, 2024, Bangla Wikipedia</em></p>
+      </div>
+      <div class="activity">
+        <h3>Organiser – Lokkhyo Ebar Lokkho</h3>
+        <p><em>Bangla Wikipedia, 2020</em></p>
+      </div>
+      <div class="activity">
+        <h3>Author – WikiBarta</h3>
+        <p><em>2021 – Present</em></p>
+      </div>
+      
+      <div class="activity">
+        <h3>Member – Wikimedia Bangladesh</h3>
+        <p><em>2021–2025</em></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Languages</h2>
+      <div class="lang-list">
+        <div class="skill">Chittagonian</div>
+        <div class="skill">Bangla</div>
+        <div class="skill">English</div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>© 2025 Al Riaz Uddin</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const body = document.body;
+    toggle.addEventListener('click', () => {
+      const currentTheme = body.getAttribute('data-theme');
+      if (currentTheme === 'dark') {
+        body.removeAttribute('data-theme');
+        toggle.textContent = '🌙';
+      } else {
+        body.setAttribute('data-theme', 'dark');
+        toggle.textContent = '☀️';
+      }
+    });
+  </script>
 </body>
 </html>
+
+
+
+
