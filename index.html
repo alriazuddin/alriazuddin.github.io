@@ -3,376 +3,692 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="google-site-verification" content="W4apVrakxW4kloesalvHk_ezWMDzNhYq_ucNDasAA3M" />
-  <meta name="viewport" content="width=device-width, initial-width=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Al Riaz Uddin | Portfolio</title>
-
   <meta name="description" content="Al Riaz Uddin - Bangladeshi Wikimedian, Administrator and CheckUser on Bangla Wikipedia.">
   <meta property="og:title" content="Al Riaz Uddin | Wikimedian Portfolio">
   <meta property="og:type" content="website">
 
+
+
   <style>
-    /* রঙ পরিবর্তন: প্রধান শিরোনামের জন্য মেরুন, বাকি সব কিছুর জন্য সবুজ */
+    /* ── Token system ── */
     :root {
-      --bg: #ffffff;
-      --text: #000000; 
-      --card-bg: #f7f7f7;
-      --accent: #800000; /* প্রধান শিরোনামের রং (মেরুন) */
-      --sub-accent: #008000; /* সাবহেডিং/ভেতরের নাম/স্কিল-এর রং (গভীর সবুজ) */
-    }
-    [data-theme="dark"] {
-      --bg: #0d1117;
-      --text: #e6edf3; 
-      --card-bg: #161b22;
-      --accent: #ff7f7f; 
-      --sub-accent: #5CB85C; /* ডার্ক মোডে সাবহেডিং/নামের রং (হালকা সবুজ) */
-    }
-    body {
-      font-family: "Times New Roman", Times, serif;
-      background: var(--bg);
-      color: var(--text); 
-      margin: 0;
-      line-height: 1.6;
-      transition: background 0.3s, color 0.3s;
-    }
-    header {
-      text-align: center;
-      padding: 2.5rem 1rem 1rem;
-      border-bottom: 2px solid var(--accent);
-      margin-bottom: 1rem;
-    }
-    h1 {
-      margin-bottom: 0.5rem;
-      font-size: 2rem;
-      color: var(--accent); 
-    }
-    h2 {
-      border-left: 4px solid var(--accent);
-      padding-left: 8px;
-      color: var(--accent); 
-      margin-top: 2.5rem;
-    }
-    /* সমস্ত h3 এখন sub-accent রং ব্যবহার করবে */
-    h3 {
-      color: var(--sub-accent); 
-      margin: 0;
-    }
-    /* সমস্ত h4 এখন sub-accent রং ব্যবহার করবে */
-    h4 {
-        color: var(--sub-accent); 
-        margin: 0.2rem 0;
-    }
-    /* Italics/Date text will also use sub-accent color */
-    em {
-        color: var(--sub-accent);
-        font-weight: 500;
+      --bg:           #f5f0e8;
+      --bg-alt:       #ede8df;
+      --card:         #fdfaf5;
+      --border:       #ddd5c4;
+      --text:         #1c1a16;
+      --muted:        #6b6454;
+      --accent:       #b8860b;        /* dark goldenrod — saffron */
+      --accent-light: #f9f0d6;
+      --accent-mid:   #e4c06a;
+      --teal:         #2e7d7d;
+      --teal-light:   #e4f3f3;
+      --teal-border:  #9ecece;
+      --rule:         #c9bfad;
+      --shadow-sm:    0 1px 3px rgba(60,50,30,.07);
+      --shadow-md:    0 4px 16px rgba(60,50,30,.10);
     }
 
-    p {
-      max-width: 750px;
-      margin: 0.5rem auto;
-      font-size: 1rem;
-      color: var(--text); 
+    [data-theme="dark"] {
+      --bg:           #0f1320;
+      --bg-alt:       #161c2e;
+      --card:         #1a2035;
+      --border:       #2a3352;
+      --text:         #e8e2d6;
+      --muted:        #8a8070;
+      --accent:       #d4a833;
+      --accent-light: rgba(212,168,51,.12);
+      --accent-mid:   #c49820;
+      --teal:         #4aacac;
+      --teal-light:   rgba(74,172,172,.12);
+      --teal-border:  rgba(74,172,172,.35);
+      --rule:         #2a3352;
+      --shadow-sm:    0 1px 3px rgba(0,0,0,.25);
+      --shadow-md:    0 4px 20px rgba(0,0,0,.45);
     }
-    .container {
-      max-width: 900px;
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      transition: background .3s, color .3s;
+    }
+
+    /* ── Layout shell ── */
+    .page {
+      max-width: 980px;
       margin: 0 auto;
-      padding: 0 1rem 3rem;
+      padding: 0 1.5rem 5rem;
     }
-    .section {
-      margin-top: 2rem;
-    }
-    .role, .activity, .certificate {
-      background: var(--card-bg);
-      padding: 1rem;
-      border-radius: 10px;
-      margin: 0.7rem 0;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
-    .role:hover, .activity:hover, .certificate:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-    }
-    .skills-list, .lang-list {
+
+    /* ── Theme toggle ── */
+    .theme-btn {
+      position: fixed;
+      top: 1.1rem;
+      right: 1.1rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      font-size: 1.05rem;
+      cursor: pointer;
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
+      align-items: center;
       justify-content: center;
+      box-shadow: var(--shadow-sm);
+      z-index: 200;
+      transition: border-color .2s, transform .15s;
     }
-    /* .skill ক্লাসের রং পরিবর্তন করা হলো */
-    .skill {
-      background: var(--card-bg);
-      border: 1px solid var(--sub-accent); /* বর্ডার এখন সবুজ */
-      color: var(--sub-accent); /* টেক্সট এখন সবুজ */
-      padding: 0.4rem 0.8rem;
+    .theme-btn:hover { border-color: var(--accent); transform: scale(1.08); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 4rem 0 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 2rem;
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .hero-name {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+    .hero-name span {
+      display: inline-block;
+      border-bottom: 4px solid var(--accent);
+      padding-bottom: 2px;
+    }
+
+    .hero-sub {
+      font-size: .97rem;
+      color: var(--muted);
+      margin-top: .7rem;
+      font-weight: 400;
+      max-width: 52ch;
+    }
+    .hero-sub strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .hero-meta {
+      margin-top: .5rem;
+      font-size: .87rem;
+      color: var(--muted);
+    }
+
+    .hero-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      margin-top: 1.2rem;
+      padding: .5rem 1.1rem;
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      border-radius: 4px;
+      font-size: .88rem;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: .01em;
+      transition: background .15s, color .15s;
+    }
+    .hero-link:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .hero-emblem {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--accent-mid);
+      opacity: .18;
+      user-select: none;
+      margin-bottom: .2rem;
+    }
+
+    /* ── Two-column body ── */
+    .body-grid {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 3rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+
+    /* ── Section headings ── */
+    .section { margin-bottom: 2.8rem; }
+
+    .section-label {
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .6rem;
+    }
+    .section-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text);
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 1.2rem;
+    }
+
+    /* ── Role cards ── */
+    .role-list { display: flex; flex-direction: column; gap: .85rem; }
+
+    .role-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 6px;
+      padding: 1rem 1.15rem;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow .2s, transform .2s;
+    }
+    .role-card:hover {
+      transform: translateX(3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .role-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .2rem;
+    }
+    .role-period {
+      display: inline-block;
+      font-size: .78rem;
+      font-weight: 500;
+      color: var(--teal);
+      background: var(--teal-light);
+      border: 1px solid var(--teal-border);
+      border-radius: 4px;
+      padding: .1rem .5rem;
+      margin-bottom: .45rem;
+    }
+    .role-desc {
+      font-size: .88rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── Activity entries ── */
+    .activity-list { display: flex; flex-direction: column; gap: .7rem; }
+
+    .activity-entry {
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: .7rem;
+    }
+    .activity-entry:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .activity-title {
+      font-size: .94rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .18rem;
+    }
+    .activity-period {
+      display: inline-block;
+      font-size: .75rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: .3rem;
+    }
+    .activity-desc {
+      font-size: .85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── Sidebar ── */
+    .sidebar { display: flex; flex-direction: column; gap: 2rem; }
+
+    .sidebar-block {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .sidebar-block .section-title {
+      font-size: 1.05rem;
+      margin-bottom: .9rem;
+    }
+
+    /* ── Pill tags ── */
+    .pill-group { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .pill {
+      font-size: .78rem;
+      font-weight: 500;
+      padding: .28rem .65rem;
       border-radius: 20px;
-      font-size: 0.9rem;
+      border: 1px solid var(--teal-border);
+      color: var(--teal);
+      background: var(--teal-light);
+      transition: transform .15s;
     }
+    .pill:hover { transform: translateY(-1px); }
+
+    /* ── Education ── */
+    .edu-name {
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* ── Conferences ── */
+    .conf-list { display: flex; flex-direction: column; gap: .5rem; }
+    .conf-item {
+      font-size: .88rem;
+      color: var(--muted);
+      padding-left: .9rem;
+      position: relative;
+    }
+    .conf-item::before {
+      content: '◆';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: .5rem;
+      top: .28rem;
+    }
+
+    /* ── Certificates ── */
+    .cert-list { display: flex; flex-direction: column; gap: .65rem; }
+    .cert-item {
+      padding: .75rem .9rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--card);
+      box-shadow: var(--shadow-sm);
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .cert-item:hover {
+      border-color: var(--accent-mid);
+      box-shadow: var(--shadow-md);
+    }
+    .cert-name {
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .15rem;
+    }
+    .cert-issuer {
+      font-size: .78rem;
+      color: var(--muted);
+      margin-bottom: .35rem;
+    }
+    .cert-link {
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--accent-mid);
+    }
+    .cert-link:hover { border-bottom-style: solid; }
+
+    /* ── Activity bullets ── */
+    .activity-bullets {
+      margin: .4rem 0 0 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: .35rem;
+      list-style: none;
+      padding: 0;
+    }
+    .activity-bullets li {
+      font-size: .85rem;
+      color: var(--muted);
+      line-height: 1.55;
+      padding-left: 1.1rem;
+      position: relative;
+    }
+    .activity-bullets li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* ── Language bar ── */
+    .lang-list { display: flex; flex-direction: column; gap: .55rem; }
+    .lang-item { font-size: .88rem; color: var(--text); font-weight: 500; }
+    .lang-item span { color: var(--muted); font-weight: 400; margin-left: .3rem; font-size: .8rem; }
+
+    /* ── Footer ── */
     footer {
       text-align: center;
       padding: 2rem 0 1rem;
-      font-size: 0.9rem;
-      opacity: 0.7;
-      border-top: 1px solid rgba(0,0,0,0.1);
-      color: var(--text);
+      border-top: 1px solid var(--rule);
+      font-size: .82rem;
+      color: var(--muted);
+      margin-top: 2rem;
     }
-    .theme-toggle {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-      background: var(--card-bg);
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 1.2rem;
-      cursor: pointer;
+
+    /* ── Responsive ── */
+    @media (max-width: 700px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-emblem { display: none; }
+      .body-grid { grid-template-columns: 1fr; gap: 0; }
+      .sidebar { margin-top: 2rem; }
     }
-    .certificates {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
-    }
-    .certificate a {
-      display: inline-block;
-      margin-top: 0.4rem;
-      color: var(--accent); /* লিঙ্কগুলো প্রধান রং (মেরুন) ব্যবহার করবে */
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .certificate a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 600px) {
-      h1 { font-size: 1.6rem; }
-      h2 { font-size: 1.2rem; }
-      .skill { font-size: 0.8rem; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
     }
   </style>
 </head>
 <body>
-  <button class="theme-toggle" id="themeToggle">🌙</button>
 
-  <header>
-    <h1>Al Riaz Uddin</h1>
-    <p><strong>Engineering Student | Tech Enthusiast | Wikimedian</strong></p>
-    <p>Administrator & CheckUser on Bangla Wikipedia | Co-editor of WikiBarta</p>
-    <div class="social">
-      <a href="https://linkedin.com/in/alriazuddin" target="_blank">LinkedIn</a>
+<button class="theme-btn" id="themeToggle" aria-label="Toggle theme">🌙</button>
+
+<div class="page">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div>
+      <div class="hero-name"><span>Al Riaz Uddin</span></div>
+      <p class="hero-sub"><strong>Engineering Student · Tech Enthusiast · Wikimedian</strong></p>
+      <p class="hero-meta">Administrator &amp; CheckUser on Bangla Wikipedia · Co-editor of WikiBarta</p>
+      <a class="hero-link" href="https://linkedin.com/in/alriazuddin" target="_blank">LinkedIn</a>
     </div>
+    <div class="hero-emblem" aria-hidden="true">ويكي</div>
   </header>
 
-  <div class="container">
+  <div class="body-grid">
 
-    <section class="section">
-      <h2>Key Roles in Wikimedia</h2>
-      <div class="role">
-        <h3>Administrator – Bangla Wikipedia</h3>
-        <p><em>July 2021 – Present</em></p>
-        <p>Granted advanced technical permissions including blocking/unblocking users, editing protected pages, deleting/restoring pages, and other administrative tools.</p>
-      </div>
-      <div class="role">
-        <h3>CheckUser – Bangla Wikipedia</h3>
-        <p><em>May 2022 – Present</em></p>
-        <p>Trusted user with access to private technical data for detecting sockpuppet accounts and protecting the community from abuse.</p>
-      </div>
-      <div class="role">
-        <h3>Communication Lead – Bangla Wikiconnect</h3>
-        <p><em>2025 – Present</em></p>
-        <p>Responsible for outreach, communication strategy, and community engagement.</p>
-      </div>
-      <div class="role">
-        <h3>Co-Editor – WikiBarta</h3>
-        <p><em>September 2023 – Present</em></p>
-        <p>Co-editor of WikiBarta, the official Wikimedia Bangladesh magazine featuring articles, interviews, and project highlights.</p>
-      </div>
-    </section>
+    <!-- MAIN COLUMN -->
+    <main>
 
-    <section class="section">
-      <h2>Education</h2>
-      <p><strong>International Islamic University Chittagong</strong></p>
-    </section>
+      <!-- Key Roles -->
+      <section class="section">
+        <div class="section-label">Wikimedia</div>
+        <div class="section-title">Key Roles in Wikimedia</div>
+        <div class="role-list">
 
-    <section class="section">
-      <h2>Skills</h2>
-      <div class="skills-list">
-        <div class="skill">Microsoft Word</div>
-        <div class="skill">Microsoft Excel</div>
-        <div class="skill">Microsoft PowerPoint</div>
-        <div class="skill">Google Docs</div>
-        <div class="skill">Google Sheets</div>
-        <div class="skill">Google Forms</div>
-        <div class="skill">HTML</div>
-        <div class="skill">Wiki Markup</div>
-        <div class="skill">Presentation Skill</div>
-        <div class="skill">Fact-checking</div>
-        <div class="skill">Organizational Skill</div>
-        <div class="skill">Digital Journalism</div>
-        <div class="skill">Digital Marketing</div>
-        <div class="skill">SEO (Intermediate)</div>
-        <div class="skill">WordPress & Blogger (Intermediate)</div>
-        <div class="skill">Graphics Design (Intermediate)</div>
-        <div class="skill">Video Editing (Basics)</div>
-      </div>
-    </section>
-    
-    <section class="section">
-      <h2>Conference & Fest Participation</h2>
-      <div class="activity">
-        <h3>International Conference on Innovations in Science, Engineering and Technology 2024 (ICISET 2024)</h3>
-      </div>
-      <div class="activity">
-        <h3>Bangla WikiConference 2024</h3>
-      </div>
-      <div class="activity">
-        <h3>IIUC Tech Fest 2023</h3>
-      </div>
-    </section>
+          <div class="role-card">
+            <div class="role-title">Administrator – Bangla Wikipedia</div>
+            <div class="role-period">July 2021 – Present</div>
+            <p class="role-desc">Granted advanced technical permissions including blocking/unblocking users, editing protected pages, deleting/restoring pages, and other administrative tools.</p>
+          </div>
 
-    <section class="section">
-      <h2>Certificates & Credentials</h2>
-      <div class="certificates">
-        <div class="certificate">
-          <h4>Digital Investigation Techniques (Master Certificate)</h4>
-          <p>by AFP</p>
-          <a href="https://digitalcourses.afp.com/certificates/ysi2qk50b3" target="_blank">Show credential</a>
-        </div>
-        <div class="certificate">
-          <h4>Introduction to Digital Journalism</h4>
-          <p>by Reuters</p>
-          <a href="https://reutersdigitaljournalism.com/course_completed_certificate/187392.html?l=en" target="_blank">Show credential</a>
-        </div>
-        <div class="certificate">
-          <h4>Presentation & Public Speaking</h4>
-          <p>by 10 Minute School</p>
-          <a href="https://10minuteschool.com/certificate/6851802dae16d" target="_blank">Show credential</a>
-        </div>
-        <div class="certificate">
-          <h4>Professional CV & Resume Writing</h4>
-          <p>by Qlearn</p>
-          <a href="https://qlearn.com.bd/certificateCheck" target="_blank">Show credential</a>
-        </div>
-        <div class="certificate">
-          <h4>Microsoft Office Starter</h4>
-          <p>by 10 Minute School</p>
-          <a href="https://10minuteschool.com/certificate/678369ec1dc63" target="_blank">Show credential</a>
-        </div>
-        <div class="certificate">
-          <h4>Digital Literacy Course</h4>
-          <p>by ICT Division, Bangladesh</p>
-        </div>
-        <div class="certificate">
-          <h4>Online Cricket Scoring</h4>
-          <p>by CricHeroes</p>
-        </div>
-        <div class="certificate">
-          <h4>Volunteerism for Social Change</h4>
-          <p>by BYLCx</p>
-        </div>
-        <div class="certificate">
-          <h4>Fact-checking Fundamentals</h4>
-          <p>by International Fact-Checking Network (IFCN)</p>
-        </div>
-        <div class="certificate">
-          <h4>Safety & Security in Digital Journalism</h4>
-          <p>by Management & Resources Development Initiatives (MRDI)</p>
-        </div>
-        <div class="certificate">
-          <h4>ECB ACO Basics of Scoring</h4>
-          <p>by England & Wales Cricket Board</p>
-        </div>
-      </div>
-      <p style="text-align:center; margin-top:1rem;">
-        All verified certificates are available on <a href="https://linkedin.com/in/alriazuddin" target="_blank" style="color:var(--accent);">LinkedIn</a> profile.
-      </p>
-    </section>
+          <div class="role-card">
+            <div class="role-title">CheckUser – Bangla Wikipedia</div>
+            <div class="role-period">May 2022 – Present</div>
+            <p class="role-desc">Trusted user with access to private technical data for detecting sockpuppet accounts and protecting the community from abuse.</p>
+          </div>
 
-    <section class="section">
-      <h2>Roles, Activities & Memberships</h2>
-      <div class="activity">
-<h3>MHSC Reunion Online Registration & Live Dashboard System</h3>
-<p><em>Made with passion – https://mhscreunion.vercel.app/</em></p>
-<p>Developed a full-stack digital workflow using free Google tools (Forms, Sheets, Apps Script) and a Vercel frontend, automating PDF receipts, instant SMS confirmations, and semi-automated payment verification including membership checks, and duplicate entry detection.</p>
-<p>Implemented secure API architecture featuring secret-key protection, origin validation, and structured JSON responses.</p>
-<p>Developed a robust record-verification engine supporting tracking/mobile search</p>
-<p>Automated the generation of digital ID cards and congratulation card, streamlining attendee recognition and onboarding.</p>
-<p>Created a real-time analytics dashboard providing dynamic batch-wise and profession-wise insights.</p>
-<p>Designed a fully responsive and scalable UI using Tailwind CSS and modular JavaScript.</p>
-</div>
-      <div class="activity">
-        <h3>General Secretary – Madarsha Fotonta Fol Unnayan Songoton (Est: 1992)</h3>
-        <p><em>2019–Present</em></p>
-      </div>
-      <div class="activity">
-        <h3>Project Lead – Wiki Loves Children</h3>
-        <p><em>Bangla Wikipedia, 2025</em></p>
-      </div>
-      <div class="activity">
-        <h3>Organiser – Wiktionary Entry Contest</h3>
-        <p><em>Bangla Wiktionary, 2025</em></p>
-      </div>
-      <div class="activity">
-        <h3>Reviewer – Wikibooks Writing Competition</h3>
-        <p><em>Bangla Wikibooks, 2024</em></p>
-      </div>
-      <div class="activity">
-        <h3>Reviewer – Wiki Loves Children</h3>
-        <p><em>Bangla Wikibooks, 2021</em></p>
-      </div>
-      <div class="activity">
-        <h3>Co-ordinator – Islam Related Editathon</h3>
-        <p><em>2021, 2022, 2023, 2024, Bangla Wikipedia</em></p>
-      </div>
-      <div class="activity">
-        <h3>Organiser – Lokkhyo Ebar Lokkho</h3>
-        <p><em>Bangla Wikipedia, 2020</em></p>
-      </div>
-      <div class="activity">
-        <h3>Author – WikiBarta</h3>
-        <p><em>2021 – Present</em></p>
-      </div>
-      
-      <div class="activity">
-        <h3>Member – Wikimedia Bangladesh</h3>
-        <p><em>2021–2025</em></p>
-      </div>
-    </section>
+          <div class="role-card">
+            <div class="role-title">Communication Lead – Bangla Wikiconnect</div>
+            <div class="role-period">2025 – Present</div>
+            <p class="role-desc">Responsible for outreach, communication strategy, and community engagement.</p>
+          </div>
 
-    <section class="section">
-      <h2>Languages</h2>
-      <div class="lang-list">
-        <div class="skill">Chittagonian</div>
-        <div class="skill">Bangla</div>
-        <div class="skill">English</div>
-      </div>
-    </section>
+          <div class="role-card">
+            <div class="role-title">Co-Editor – WikiBarta</div>
+            <div class="role-period">September 2023 – Present</div>
+            <p class="role-desc">Co-editor of WikiBarta, the official Wikimedia Bangladesh magazine featuring articles, interviews, and project highlights.</p>
+          </div>
 
-  </div>
+        </div>
+      </section>
+
+      <!-- Activities & Memberships -->
+      <section class="section">
+        <div class="section-label">Community</div>
+        <div class="section-title">Roles, Activities &amp; Memberships</div>
+        <div class="activity-list">
+
+          <div class="activity-entry">
+            <div class="activity-title">MHSC Reunion Online Registration &amp; Live Dashboard System</div>
+            <div class="activity-period">Made with passion – https://mhscreunion.vercel.app/</div>
+            <ul class="activity-bullets">
+              <li>Developed a full-stack digital workflow using free Google tools (Forms, Sheets, Apps Script) and a Vercel frontend, automating PDF receipts, instant SMS confirmations, and semi-automated payment verification including membership checks and duplicate entry detection.</li>
+              <li>Implemented secure API architecture featuring secret-key protection, origin validation, and structured JSON responses.</li>
+              <li>Developed a robust record-verification engine supporting tracking/mobile search.</li>
+              <li>Automated the generation of digital ID cards and congratulation cards, streamlining attendee recognition and onboarding.</li>
+              <li>Created a real-time analytics dashboard providing dynamic batch-wise and profession-wise insights.</li>
+              <li>Designed a fully responsive and scalable UI using Tailwind CSS and modular JavaScript.</li>
+            </ul>
+          </div>
+
+          <div class="activity-entry">
+            <div class="activity-title">General Secretary – Madarsha Fotonta Fol Unnayan Songoton (Est: 1992)</div>
+            <div class="activity-period">2019 – Present</div>
+          </div>
+
+          <div class="activity-entry">
+            <div class="activity-title">Project Lead – Wiktionary Entry Contest</div>
+            <div class="activity-period">Bangla Wiktionary, 2026</div>
+          </div>
+
+          <div class="activity-entry">
+            <div class="activity-title">Project Lead – Wiki Loves Children</div>
+            <div class="activity-period">Bangla Wikipedia, 2025</div>
+          </div>
+
+          <div class="activity-entry">
+            <div class="activity-title">Organiser – Wiktionary Entry Contest</div>
+            <div class="activity-period">Bangla Wiktionary, 2025</div>
+          </div>
+
+          <div class="activity-entry">
+            <div class="activity-title">Reviewer – Wikibooks Writing Competition</div>
+            <div class="activity-period">Bangla Wikibooks, 2024</div>
+          </div>
+
+          <div class="activity-entry">
+            <div class="activity-title">Reviewer – Wiki Loves Children</div>
+            <div class="activity-period">Bangla Wikibooks, 2021</div>
+          </div>
+
+          <div class="activity-entry">
+            <div class="activity-title">Co-ordinator – Islam Related Editathon</div>
+            <div class="activity-period">2021, 2022, 2023, 2024, Bangla Wikipedia</div>
+          </div>
+
+          <div class="activity-entry">
+            <div class="activity-title">Organiser – Lokkhyo Ebar Lokkho</div>
+            <div class="activity-period">Bangla Wikipedia, 2020</div>
+          </div>
+
+          <div class="activity-entry">
+            <div class="activity-title">Author – WikiBarta</div>
+            <div class="activity-period">2021 – Present</div>
+          </div>
+
+          <div class="activity-entry">
+            <div class="activity-title">Member – Wikimedia Bangladesh</div>
+            <div class="activity-period">2021 – 2025</div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Certificates -->
+      <section class="section">
+        <div class="section-label">Credentials</div>
+        <div class="section-title">Certificates &amp; Credentials</div>
+        <div class="cert-list">
+
+          <div class="cert-item">
+            <div class="cert-name">Digital Investigation Techniques (Master Certificate)</div>
+            <div class="cert-issuer">by AFP</div>
+            <a class="cert-link" href="https://digitalcourses.afp.com/certificates/ysi2qk50b3" target="_blank">Show credential</a>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-name">Introduction to Digital Journalism</div>
+            <div class="cert-issuer">by Reuters</div>
+            <a class="cert-link" href="https://reutersdigitaljournalism.com/course_completed_certificate/187392.html?l=en" target="_blank">Show credential</a>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-name">Presentation &amp; Public Speaking</div>
+            <div class="cert-issuer">by 10 Minute School</div>
+            <a class="cert-link" href="https://10minuteschool.com/certificate/6851802dae16d" target="_blank">Show credential</a>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-name">Professional CV &amp; Resume Writing</div>
+            <div class="cert-issuer">by Qlearn</div>
+            <a class="cert-link" href="https://qlearn.com.bd/certificateCheck" target="_blank">Show credential</a>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-name">Microsoft Office Starter</div>
+            <div class="cert-issuer">by 10 Minute School</div>
+            <a class="cert-link" href="https://10minuteschool.com/certificate/678369ec1dc63" target="_blank">Show credential</a>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-name">Digital Literacy Course</div>
+            <div class="cert-issuer">by ICT Division, Bangladesh</div>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-name">Online Cricket Scoring</div>
+            <div class="cert-issuer">by CricHeroes</div>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-name">Volunteerism for Social Change</div>
+            <div class="cert-issuer">by BYLCx</div>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-name">Fact-checking Fundamentals</div>
+            <div class="cert-issuer">by International Fact-Checking Network (IFCN)</div>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-name">Safety &amp; Security in Digital Journalism</div>
+            <div class="cert-issuer">by Management &amp; Resources Development Initiatives (MRDI)</div>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-name">ECB ACO Basics of Scoring</div>
+            <div class="cert-issuer">by England &amp; Wales Cricket Board</div>
+          </div>
+
+        </div>
+        <p style="margin-top:1rem; font-size:.82rem; color:var(--muted); text-align:center;">All verified certificates available on <a href="https://linkedin.com/in/alriazuddin" target="_blank" style="color:var(--accent); font-weight:600;">LinkedIn</a></p>
+      </section>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- Education -->
+      <div class="sidebar-block">
+        <div class="section-title">Education</div>
+        <p class="edu-name">International Islamic University Chittagong</p>
+      </div>
+
+      <!-- Skills -->
+      <div class="sidebar-block">
+        <div class="section-title">Skills</div>
+        <div class="pill-group">
+          <span class="pill">Microsoft Word</span>
+          <span class="pill">Microsoft Excel</span>
+          <span class="pill">Microsoft PowerPoint</span>
+          <span class="pill">Google Docs</span>
+          <span class="pill">Google Sheets</span>
+          <span class="pill">Google Forms</span>
+          <span class="pill">HTML</span>
+          <span class="pill">Wiki Markup</span>
+          <span class="pill">Presentation Skill</span>
+          <span class="pill">Fact-checking</span>
+          <span class="pill">Organizational Skill</span>
+          <span class="pill">Digital Journalism</span>
+          <span class="pill">Digital Marketing</span>
+          <span class="pill">SEO (Intermediate)</span>
+          <span class="pill">WordPress &amp; Blogger</span>
+          <span class="pill">Graphics Design (Intermediate)</span>
+          <span class="pill">Video Editing (Basics)</span>
+        </div>
+      </div>
+
+      <!-- Conferences -->
+      <div class="sidebar-block">
+        <div class="section-title">Conference &amp; Fest</div>
+        <div class="conf-list">
+          <div class="conf-item">International Conference on Innovations in Science, Engineering and Technology 2024 (ICISET 2024)</div>
+          <div class="conf-item">Bangla WikiConference 2024</div>
+          <div class="conf-item">IIUC Tech Fest 2023</div>
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div class="sidebar-block">
+        <div class="section-title">Languages</div>
+        <div class="lang-list">
+          <div class="lang-item">Chittagonian</div>
+          <div class="lang-item">Bangla</div>
+          <div class="lang-item">English</div>
+        </div>
+      </div>
+
+    </aside>
+
+  </div><!-- /body-grid -->
 
   <footer>
     <p>© 2026 Al Riaz Uddin</p>
   </footer>
 
-  <script>
-    const toggle = document.getElementById('themeToggle');
-    const body = document.body;
-    toggle.addEventListener('click', () => {
-      const currentTheme = body.getAttribute('data-theme');
-      if (currentTheme === 'dark') {
-        body.removeAttribute('data-theme');
-        toggle.textContent = '🌙';
-      } else {
-        body.setAttribute('data-theme', 'dark');
-        toggle.textContent = '☀️';
-      }
-    });
-  </script>
+</div><!-- /page -->
+
+<script>
+  const btn  = document.getElementById('themeToggle');
+  const root = document.documentElement;
+  const sys  = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const saved = localStorage.getItem('theme');
+
+  if (saved === 'dark' || (!saved && sys)) {
+    root.setAttribute('data-theme', 'dark');
+    btn.textContent = '☀️';
+  }
+
+  btn.addEventListener('click', () => {
+    const dark = root.getAttribute('data-theme') === 'dark';
+    if (dark) {
+      root.removeAttribute('data-theme');
+      btn.textContent = '🌙';
+      localStorage.setItem('theme', 'light');
+    } else {
+      root.setAttribute('data-theme', 'dark');
+      btn.textContent = '☀️';
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
