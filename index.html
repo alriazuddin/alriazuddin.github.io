@@ -5,11 +5,47 @@
   <meta name="google-site-verification" content="Nt8d2MaZttRSwgsqnNtSrZDapqHmExe4ezFYRnnCv9U" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Al Riaz Uddin | Portfolio</title>
-  <meta name="description" content="Al Riaz Uddin - Bangladeshi Wikimedian, Administrator and CheckUser on Bangla Wikipedia.">
+  <meta name="description" content="Al Riaz Uddin - Bangladeshi Wikimedian, Administrator and CheckUser on Bangla Wikipedia, Tech Enthusiast, and Community Leader.">
+  <link rel="canonical" href="https://connect.bnwp.org/en/persona/riazacu/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="profile">
   <meta property="og:title" content="Al Riaz Uddin | Wikimedian Portfolio">
-  <meta property="og:type" content="website">
+  <meta property="og:description" content="Administrator & CheckUser on Bangla Wikipedia, Co-editor of WikiBarta, Founder of Satkania Connect.">
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Al_Riaz_Uddin_presenting_Bangla_WikiConnect_at_Bangla_WikiConference_2026.jpg/800px-Al_Riaz_Uddin_presenting_Bangla_WikiConnect_at_Bangla_WikiConference_2026.jpg">
 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Al Riaz Uddin | Wikimedian Portfolio">
+  <meta name="twitter:description" content="Administrator & CheckUser on Bangla Wikipedia, Co-editor of WikiBarta, Founder of Satkania Connect.">
+  <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Al_Riaz_Uddin_presenting_Bangla_WikiConnect_at_Bangla_WikiConference_2026.jpg/800px-Al_Riaz_Uddin_presenting_Bangla_WikiConnect_at_Bangla_WikiConference_2026.jpg">
 
+  <!-- Internal Structured Data (JSON-LD) for SEO / Knowledge Graph -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://www.wikidata.org/wiki/Q114006944",
+    "name": "Al Riaz Uddin",
+    "alternateName": ["RiazACU", "আল রিয়াজ উদ্দীন"],
+    "jobTitle": "Administrator & CheckUser",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Bangla Wikipedia"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "International Islamic University Chittagong"
+    },
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Al_Riaz_Uddin_presenting_Bangla_WikiConnect_at_Bangla_WikiConference_2026.jpg/800px-Al_Riaz_Uddin_presenting_Bangla_WikiConnect_at_Bangla_WikiConference_2026.jpg",
+    "sameAs": [
+      "https://www.wikidata.org/wiki/Q114006944",
+      "https://linkedin.com/in/alriazuddin",
+      "https://connect.bnwp.org/en/persona/riazacu/",
+      "https://satkaniaconnect.org"
+    ]
+  }
+  </script>
 
   <style>
     /* ── Token system ── */
@@ -99,8 +135,8 @@
       padding: 4rem 0 2.5rem;
       display: grid;
       grid-template-columns: 1fr auto;
-      align-items: end;
-      gap: 2rem;
+      align-items: center;
+      gap: 2.5rem;
       border-bottom: 2px solid var(--rule);
     }
 
@@ -141,7 +177,7 @@
       align-items: center;
       gap: .35rem;
       margin-top: 1.2rem;
-      padding: .5rem 1.1rem;
+      padding: .5rem 1.2rem;
       border: 1.5px solid var(--accent);
       color: var(--accent);
       border-radius: 4px;
@@ -156,14 +192,19 @@
       color: #fff;
     }
 
-    .hero-emblem {
-      font-family: 'Playfair Display', serif;
-      font-size: 5rem;
-      line-height: 1;
-      color: var(--accent-mid);
-      opacity: .18;
-      user-select: none;
-      margin-bottom: .2rem;
+    .hero-avatar {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      flex-shrink: 0;
+    }
+    .hero-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      box-shadow: var(--shadow-md);
     }
 
     /* ── Two-column body ── */
@@ -236,12 +277,23 @@
       line-height: 1.6;
     }
 
+    /* Inline links */
+    .content-link {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--accent-mid);
+      font-weight: 500;
+    }
+    .content-link:hover {
+      border-bottom-style: solid;
+    }
+
     /* ── Activity entries ── */
-    .activity-list { display: flex; flex-direction: column; gap: .7rem; }
+    .activity-list { display: flex; flex-direction: column; gap: .8rem; }
 
     .activity-entry {
       border-bottom: 1px solid var(--rule);
-      padding-bottom: .7rem;
+      padding-bottom: .8rem;
     }
     .activity-entry:last-child { border-bottom: none; padding-bottom: 0; }
 
@@ -262,6 +314,51 @@
       font-size: .85rem;
       color: var(--muted);
       line-height: 1.6;
+    }
+
+    /* ── Details / Summary collapsible styling ── */
+    details.collapse-box {
+      margin-top: .4rem;
+    }
+    details.collapse-box summary {
+      cursor: pointer;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--accent);
+      user-select: none;
+      outline: none;
+      padding: .25rem 0;
+      transition: color .15s;
+    }
+    details.collapse-box summary:hover {
+      color: var(--text);
+    }
+    details.collapse-box[open] summary {
+      margin-bottom: .4rem;
+    }
+
+    /* ── Activity bullets ── */
+    .activity-bullets {
+      margin: .2rem 0 0 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: .35rem;
+      list-style: none;
+      padding: 0;
+    }
+    .activity-bullets li {
+      font-size: .85rem;
+      color: var(--muted);
+      line-height: 1.55;
+      padding-left: 1.1rem;
+      position: relative;
+    }
+    .activity-bullets li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 600;
     }
 
     /* ── Sidebar ── */
@@ -301,7 +398,7 @@
     }
 
     /* ── Conferences ── */
-    .conf-list { display: flex; flex-direction: column; gap: .5rem; }
+    .conf-list { display: flex; flex-direction: column; gap: .65rem; }
     .conf-item {
       font-size: .88rem;
       color: var(--muted);
@@ -314,7 +411,32 @@
       left: 0;
       color: var(--accent);
       font-size: .5rem;
-      top: .28rem;
+      top: .32rem;
+    }
+    .conf-details {
+      margin-top: .25rem;
+      padding-left: .2rem;
+    }
+    .conf-details ul {
+      list-style: none;
+      padding-left: .5rem;
+      margin-top: .25rem;
+      display: flex;
+      flex-direction: column;
+      gap: .25rem;
+    }
+    .conf-details li {
+      font-size: .8rem;
+      color: var(--muted);
+      line-height: 1.45;
+      position: relative;
+      padding-left: .8rem;
+    }
+    .conf-details li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
     }
 
     /* ── Certificates ── */
@@ -351,30 +473,6 @@
     }
     .cert-link:hover { border-bottom-style: solid; }
 
-    /* ── Activity bullets ── */
-    .activity-bullets {
-      margin: .4rem 0 0 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: .35rem;
-      list-style: none;
-      padding: 0;
-    }
-    .activity-bullets li {
-      font-size: .85rem;
-      color: var(--muted);
-      line-height: 1.55;
-      padding-left: 1.1rem;
-      position: relative;
-    }
-    .activity-bullets li::before {
-      content: '–';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: 600;
-    }
-
     /* ── Language bar ── */
     .lang-list { display: flex; flex-direction: column; gap: .55rem; }
     .lang-item { font-size: .88rem; color: var(--text); font-weight: 500; }
@@ -383,17 +481,36 @@
     /* ── Footer ── */
     footer {
       text-align: center;
-      padding: 2rem 0 1rem;
+      padding: 2.2rem 0 1rem;
       border-top: 1px solid var(--rule);
       font-size: .82rem;
       color: var(--muted);
       margin-top: 2rem;
     }
+    .footer-meta {
+      margin-top: .4rem;
+      font-size: .76rem;
+    }
+    .footer-meta a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .15s;
+    }
+    .footer-meta a:hover {
+      color: var(--accent);
+    }
 
     /* ── Responsive ── */
     @media (max-width: 700px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero-emblem { display: none; }
+      .hero { 
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+      .hero-avatar {
+        order: -1;
+        width: 110px;
+        height: 110px;
+      }
       .body-grid { grid-template-columns: 1fr; gap: 0; }
       .sidebar { margin-top: 2rem; }
     }
@@ -414,10 +531,12 @@
     <div>
       <div class="hero-name"><span>Al Riaz Uddin</span></div>
       <p class="hero-sub"><strong>Engineering Student · Tech Enthusiast · Wikimedian</strong></p>
-      <p class="hero-meta">Administrator &amp; CheckUser on Bangla Wikipedia · Co-editor of WikiBarta</p>
-      <a class="hero-link" href="https://linkedin.com/in/alriazuddin" target="_blank">LinkedIn</a>
+      <p class="hero-meta">Administrator & CheckUser on Bangla Wikipedia · Co-editor of WikiBarta</p>
+      <a class="hero-link" href="https://linkedin.com/in/alriazuddin" target="_blank" rel="noopener">LinkedIn</a>
     </div>
-    <div class="hero-emblem" aria-hidden="true">ويكي</div>
+    <div class="hero-avatar">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Al_Riaz_Uddin_presenting_Bangla_WikiConnect_at_Bangla_WikiConference_2026.jpg/800px-Al_Riaz_Uddin_presenting_Bangla_WikiConnect_at_Bangla_WikiConference_2026.jpg" alt="Al Riaz Uddin presenting Bangla WikiConnect at Bangla WikiConference 2026" loading="lazy" />
+    </div>
   </header>
 
   <div class="body-grid">
@@ -446,13 +565,13 @@
           <div class="role-card">
             <div class="role-title">Communication Lead – Bangla Wikiconnect</div>
             <div class="role-period">2025 – Present</div>
-            <p class="role-desc">Responsible for outreach, communication strategy, and community engagement.</p>
+            <p class="role-desc">Responsible for outreach, communication strategy, and community engagement. View my <a href="https://connect.bnwp.org/en/persona/riazacu/" target="_blank" rel="noopener" class="content-link">WikiConnect Profile</a>.</p>
           </div>
 
           <div class="role-card">
-            <div class="role-title">Co-Editor – WikiBarta</div>
+            <div class="role-title">Co-Editor – <a href="https://wikibarta.wikimedia.org.bd" target="_blank" rel="noopener" class="content-link">WikiBarta</a></div>
             <div class="role-period">September 2023 – Present</div>
-            <p class="role-desc">Co-editor of WikiBarta, the official Wikimedia Bangladesh magazine featuring articles, interviews, and project highlights.</p>
+            <p class="role-desc">Co-editor of <a href="https://wikibarta.wikimedia.org.bd" target="_blank" rel="noopener" class="content-link">WikiBarta</a>, the official Wikimedia Bangladesh magazine featuring articles, interviews, and project highlights.</p>
           </div>
 
         </div>
@@ -460,26 +579,37 @@
 
       <!-- Activities & Memberships -->
       <section class="section">
-        <div class="section-label">Community</div>
-        <div class="section-title">Roles, Activities &amp; Memberships</div>
+        <div class="section-label">Community & Civic Tech</div>
+        <div class="section-title">Roles, Activities & Memberships</div>
         <div class="activity-list">
 
+          <!-- Satkania Connect -->
           <div class="activity-entry">
-            <div class="activity-title">MHSC Reunion Online Registration &amp; Live Dashboard System</div>
-            <div class="activity-period">Made with passion – https://mhsc-alumni.vercel.app/reunion/</div>
-            <ul class="activity-bullets">
-              <li>Developed a full-stack digital workflow using free Google tools (Forms, Sheets, Apps Script) and a Vercel frontend, automating PDF receipts, instant SMS confirmations, and semi-automated payment verification including membership checks and duplicate entry detection.</li>
-              <li>Implemented secure API architecture featuring secret-key protection, origin validation, and structured JSON responses.</li>
-              <li>Developed a robust record-verification engine supporting tracking/mobile search.</li>
-              <li>Automated the generation of digital ID cards and congratulation cards, streamlining attendee recognition and onboarding.</li>
-              <li>Created a real-time analytics dashboard providing dynamic batch-wise and profession-wise insights.</li>
-              <li>Designed a fully responsive and scalable UI using Tailwind CSS and modular JavaScript.</li>
-            </ul>
+            <div class="activity-title">Founder – <a href="https://satkaniaconnect.org" target="_blank" rel="noopener" class="content-link">Satkania Connect</a></div>
+            <div class="activity-period"><a href="https://satkaniaconnect.org" target="_blank" rel="noopener" class="content-link">satkaniaconnect.org</a></div>
+            <p class="activity-desc">A community-driven civic platform mapping verified local institutions, essential emergency services, and cultural heritage across Satkania, Chittagong.</p>
+          </div>
+
+          <!-- MHSC Reunion (Points Collapsed) -->
+          <div class="activity-entry">
+            <div class="activity-title">MHSC Reunion Online Registration & Live Dashboard System</div>
+            <div class="activity-period">Made with passion – <a href="https://mhsc-alumni.vercel.app/reunion/" target="_blank" rel="noopener" class="content-link">https://mhsc-alumni.vercel.app/reunion/</a></div>
+            <details class="collapse-box">
+              <summary>View key highlights & features ▾</summary>
+              <ul class="activity-bullets">
+                <li>Developed a full-stack digital workflow using free Google tools (Forms, Sheets, Apps Script) and a Vercel frontend, automating PDF receipts, instant SMS confirmations, and semi-automated payment verification including membership checks and duplicate entry detection.</li>
+                <li>Implemented secure API architecture featuring secret-key protection, origin validation, and structured JSON responses.</li>
+                <li>Developed a robust record-verification engine supporting tracking/mobile search.</li>
+                <li>Automated the generation of digital ID cards and congratulation cards, streamlining attendee recognition and onboarding.</li>
+                <li>Created a real-time analytics dashboard providing dynamic batch-wise and profession-wise insights.</li>
+                <li>Designed a fully responsive and scalable UI using Tailwind CSS and modular JavaScript.</li>
+              </ul>
+            </details>
           </div>
 
           <div class="activity-entry">
             <div class="activity-title">General Secretary – Madarsha Fotonta Fol Unnayan Songoton (Est: 1992)</div>
-            <div class="activity-period">2019 – Present</div>
+            <div class="activity-period">2019 – Present · <a href="https://mffus.org" target="_blank" rel="noopener" class="content-link">mffus.org</a></div>
           </div>
 
           <div class="activity-entry">
@@ -493,7 +623,7 @@
           </div>
 
           <div class="activity-entry">
-            <div class="activity-title">Organiser – Wiktionary Entry Contest</div>
+            <div class="activity-title">Coordinator – Wiktionary Entry Contest</div>
             <div class="activity-period">Bangla Wiktionary, 2025</div>
           </div>
 
@@ -518,7 +648,7 @@
           </div>
 
           <div class="activity-entry">
-            <div class="activity-title">Author – WikiBarta</div>
+            <div class="activity-title">Author – <a href="https://wikibarta.wikimedia.org.bd" target="_blank" rel="noopener" class="content-link">WikiBarta</a></div>
             <div class="activity-period">2021 – Present</div>
           </div>
 
@@ -533,37 +663,37 @@
       <!-- Certificates -->
       <section class="section">
         <div class="section-label">Credentials</div>
-        <div class="section-title">Certificates &amp; Credentials</div>
+        <div class="section-title">Certificates & Credentials</div>
         <div class="cert-list">
 
           <div class="cert-item">
             <div class="cert-name">Digital Investigation Techniques (Master Certificate)</div>
             <div class="cert-issuer">by AFP</div>
-            <a class="cert-link" href="https://digitalcourses.afp.com/certificates/ysi2qk50b3" target="_blank">Show credential</a>
+            <a class="cert-link" href="https://digitalcourses.afp.com/certificates/ysi2qk50b3" target="_blank" rel="noopener">Show credential</a>
           </div>
 
           <div class="cert-item">
             <div class="cert-name">Introduction to Digital Journalism</div>
             <div class="cert-issuer">by Reuters</div>
-            <a class="cert-link" href="https://reutersdigitaljournalism.com/course_completed_certificate/187392.html?l=en" target="_blank">Show credential</a>
+            <a class="cert-link" href="https://reutersdigitaljournalism.com/course_completed_certificate/187392.html?l=en" target="_blank" rel="noopener">Show credential</a>
           </div>
 
           <div class="cert-item">
-            <div class="cert-name">Presentation &amp; Public Speaking</div>
+            <div class="cert-name">Presentation & Public Speaking</div>
             <div class="cert-issuer">by 10 Minute School</div>
-            <a class="cert-link" href="https://10minuteschool.com/certificate/6851802dae16d" target="_blank">Show credential</a>
+            <a class="cert-link" href="https://10minuteschool.com/certificate/6851802dae16d" target="_blank" rel="noopener">Show credential</a>
           </div>
 
           <div class="cert-item">
-            <div class="cert-name">Professional CV &amp; Resume Writing</div>
+            <div class="cert-name">Professional CV & Resume Writing</div>
             <div class="cert-issuer">by Qlearn</div>
-            <a class="cert-link" href="https://qlearn.com.bd/certificateCheck" target="_blank">Show credential</a>
+            <a class="cert-link" href="https://qlearn.com.bd/certificateCheck" target="_blank" rel="noopener">Show credential</a>
           </div>
 
           <div class="cert-item">
             <div class="cert-name">Microsoft Office Starter</div>
             <div class="cert-issuer">by 10 Minute School</div>
-            <a class="cert-link" href="https://10minuteschool.com/certificate/678369ec1dc63" target="_blank">Show credential</a>
+            <a class="cert-link" href="https://10minuteschool.com/certificate/678369ec1dc63" target="_blank" rel="noopener">Show credential</a>
           </div>
 
           <div class="cert-item">
@@ -587,17 +717,17 @@
           </div>
 
           <div class="cert-item">
-            <div class="cert-name">Safety &amp; Security in Digital Journalism</div>
-            <div class="cert-issuer">by Management &amp; Resources Development Initiatives (MRDI)</div>
+            <div class="cert-name">Safety & Security in Digital Journalism</div>
+            <div class="cert-issuer">by Management & Resources Development Initiatives (MRDI)</div>
           </div>
 
           <div class="cert-item">
             <div class="cert-name">ECB ACO Basics of Scoring</div>
-            <div class="cert-issuer">by England &amp; Wales Cricket Board</div>
+            <div class="cert-issuer">by England & Wales Cricket Board</div>
           </div>
 
         </div>
-        <p style="margin-top:1rem; font-size:.82rem; color:var(--muted); text-align:center;">All verified certificates available on <a href="https://linkedin.com/in/alriazuddin" target="_blank" style="color:var(--accent); font-weight:600;">LinkedIn</a></p>
+        <p style="margin-top:1rem; font-size:.82rem; color:var(--muted); text-align:center;">All verified certificates available on <a href="https://linkedin.com/in/alriazuddin" target="_blank" rel="noopener" style="color:var(--accent); font-weight:600;">LinkedIn</a></p>
       </section>
 
     </main>
@@ -629,7 +759,7 @@
           <span class="pill">Digital Journalism</span>
           <span class="pill">Digital Marketing</span>
           <span class="pill">SEO</span>
-          <span class="pill">WordPress &amp; Blogger</span>
+          <span class="pill">WordPress & Blogger</span>
           <span class="pill">Graphics Design (Intermediate)</span>
           <span class="pill">Video Editing (Basics)</span>
         </div>
@@ -637,11 +767,34 @@
 
       <!-- Conferences -->
       <div class="sidebar-block">
-        <div class="section-title">Conference &amp; Fest</div>
+        <div class="section-title">Conference & Fest</div>
         <div class="conf-list">
-          <div class="conf-item">Bangla WikiConference 2026</div>
+
+          <!-- Bangla WikiConference 2026 (Roles in English) -->
+          <div class="conf-item">
+            <a href="https://bd.wikimedia.org/wiki/%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE_%E0%A6%89%E0%A6%87%E0%A6%95%E0%A6%BF%E0%A6%B8%E0%A6%AE%E0%A7%8D%E0%A6%AE%E0%A7%87%E0%A6%B2%E0%A6%A8_%E0%A7%A8%E0%A7%A6%E0%A7%A8%E0%A7%AC" target="_blank" rel="noopener" class="content-link"><strong>Bangla WikiConference 2026</strong></a>
+            <details class="collapse-box conf-details">
+              <summary>My Roles ▾</summary>
+              <ul>
+                <li><strong>Panel Speaker:</strong> Panel Discussion of Bangla Wikipedia Administrators</li>
+                <li><strong>Co-presenter:</strong> Bangla WikiConnect: Enriching Bangla Wikimedia Projects through Contests and Collaborative Initiatives</li>
+              </ul>
+            </details>
+          </div>
+
           <div class="conf-item">International Conference on Innovations in Science, Engineering and Technology 2024 (ICISET 2024)</div>
-          <div class="conf-item">Bangla WikiConference 2024</div>
+
+          <!-- Bangla WikiConference 2024 (Roles in English) -->
+          <div class="conf-item">
+            <a href="https://bd.wikimedia.org/wiki/%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE_%E0%A6%89%E0%A6%87%E0%A6%95%E0%A6%BF%E0%A6%B8%E0%A6%AE%E0%A7%8D%E0%A6%AE%E0%A7%87%E0%A6%B2%E0%A6%A8_%E0%A7%A8%E0%A7%A6%E0%A7%A8%E0%A7%AA" target="_blank" rel="noopener" class="content-link"><strong>Bangla WikiConference 2024</strong></a>
+            <details class="collapse-box conf-details">
+              <summary>My Roles ▾</summary>
+              <ul>
+                <li><strong>Moderator:</strong> Panel Discussion of Bangla Wikipedia Administrators</li>
+              </ul>
+            </details>
+          </div>
+
           <div class="conf-item">IIUC Tech Fest 2023</div>
         </div>
       </div>
@@ -662,6 +815,7 @@
 
   <footer>
     <p>© 2026 Al Riaz Uddin</p>
+    
   </footer>
 
 </div><!-- /page -->
