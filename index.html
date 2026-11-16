@@ -5,44 +5,97 @@
   <meta name="google-site-verification" content="Nt8d2MaZttRSwgsqnNtSrZDapqHmExe4ezFYRnnCv9U" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Al Riaz Uddin | Portfolio</title>
-  <meta name="description" content="Al Riaz Uddin - Bangladeshi Wikimedian, Administrator and CheckUser on Bangla Wikipedia, Tech Enthusiast, and Community Leader.">
-  <link rel="canonical" href="https://connect.bnwp.org/en/persona/riazacu/" />
+  <meta name="description" content="Al Riaz Uddin - Bangladeshi Wikimedian, Administrator & CheckUser on Bangla Wikipedia, General Secretary of MFFUS, and Founder of Satkania Connect.">
+  <link rel="canonical" href="https://alriazuddin.github.io/" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="Al Riaz Uddin | Wikimedian Portfolio">
-  <meta property="og:description" content="Administrator & CheckUser on Bangla Wikipedia, Co-editor of WikiBarta, Founder of Satkania Connect.">
+  <meta property="og:url" content="https://alriazuddin.github.io/">
+  <meta property="og:title" content="Al Riaz Uddin | Portfolio">
+  <meta property="og:description" content="Administrator & CheckUser on Bangla Wikipedia, General Secretary of MFFUS, Founder of Satkania Connect.">
   <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Al_Riaz_Uddin_presenting_Bangla_WikiConnect_at_Bangla_WikiConference_2026.jpg/800px-Al_Riaz_Uddin_presenting_Bangla_WikiConnect_at_Bangla_WikiConference_2026.jpg">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Al Riaz Uddin | Wikimedian Portfolio">
-  <meta name="twitter:description" content="Administrator & CheckUser on Bangla Wikipedia, Co-editor of WikiBarta, Founder of Satkania Connect.">
-  <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Al_Riaz_Uddin_presenting_Bangla_WikiConnect_at_Bangla_WikiConference_2026.jpg/800px-Al_Riaz_Uddin_presenting_Bangla_WikiConnect_at_Bangla_WikiConference_2026.jpg">
+  <meta name="twitter:title" content="Al Riaz Uddin | Portfolio">
+  <meta name="twitter:description" content="Administrator & CheckUser on Bangla Wikipedia, General Secretary of MFFUS, Founder of Satkania Connect.">
+  <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Al_Riaz_Uddin_presenting_Bangla_WikiConnect_at_Bangla_WikiConference_2026.jpg/800px-Al_Riaz_Uddin_presenting_Bangla_WikiConference_2026.jpg">
 
-  <!-- Internal Structured Data (JSON-LD) for SEO / Knowledge Graph -->
+  <!-- Structured Data (JSON-LD) for Knowledge Graph & Entity Linking -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": "https://www.wikidata.org/wiki/Q114006944",
-    "name": "Al Riaz Uddin",
-    "alternateName": ["RiazACU", "আল রিয়াজ উদ্দীন"],
-    "jobTitle": "Administrator & CheckUser",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Bangla Wikipedia"
-    },
-    "alumniOf": {
-      "@type": "EducationalOrganization",
-      "name": "International Islamic University Chittagong"
-    },
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Al_Riaz_Uddin_presenting_Bangla_WikiConnect_at_Bangla_WikiConference_2026.jpg/800px-Al_Riaz_Uddin_presenting_Bangla_WikiConnect_at_Bangla_WikiConference_2026.jpg",
-    "sameAs": [
-      "https://www.wikidata.org/wiki/Q114006944",
-      "https://linkedin.com/in/alriazuddin",
-      "https://connect.bnwp.org/en/persona/riazacu/",
-      "https://satkaniaconnect.org"
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": "https://alriazuddin.github.io/#profilepage",
+        "url": "https://alriazuddin.github.io/",
+        "name": "Al Riaz Uddin | Portfolio",
+        "mainEntity": {
+          "@id": "https://www.wikidata.org/wiki/Q114006944"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.wikidata.org/wiki/Q114006944",
+        "name": "Al Riaz Uddin",
+        "alternateName": ["RiazACU", "আল রিয়াজ উদ্দীন", "আল রিয়াজ উদ্দীন (রিপন)"],
+        "url": "https://alriazuddin.github.io/",
+        "jobTitle": [
+          "Administrator & CheckUser",
+          "General Secretary",
+          "Founder"
+        ],
+        "worksFor": [
+          {
+            "@type": "Organization",
+            "name": "Bangla Wikipedia",
+            "url": "https://bn.wikipedia.org"
+          },
+          {
+            "@type": "NonGovernmentalOrganization",
+            "@id": "https://mffus.org/#organization",
+            "name": "Madarsha Fotonta Fol Unnayan Songoton",
+            "alternateName": ["MFFUS", "মাদার্শা ফুটন্ত ফুল উন্নয়ন সংগঠন"],
+            "url": "https://mffus.org"
+          }
+        ],
+        "memberOf": [
+          {
+            "@type": "OrganizationRole",
+            "memberOf": {
+              "@id": "https://mffus.org/#organization"
+            },
+            "roleName": "General Secretary",
+            "startDate": "2019"
+          },
+          {
+            "@type": "OrganizationRole",
+            "memberOf": {
+              "@type": "Organization",
+              "@id": "https://satkaniaconnect.org/#organization",
+              "name": "Satkania Connect",
+              "alternateName": "সাতকানিয়া কানেক্ট",
+              "url": "https://satkaniaconnect.org"
+            },
+            "roleName": "Founder",
+            "startDate": "2026"
+          }
+        ],
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "International Islamic University Chittagong"
+        },
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Al_Riaz_Uddin_presenting_Bangla_WikiConnect_at_Bangla_WikiConference_2026.jpg/800px-Al_Riaz_Uddin_presenting_Bangla_WikiConnect_at_Bangla_WikiConference_2026.jpg",
+        "sameAs": [
+          "https://alriazuddin.github.io/",
+          "https://www.wikidata.org/wiki/Q114006944",
+          "https://linkedin.com/in/alriazuddin",
+          "https://connect.bnwp.org/en/persona/riazacu/",
+          "https://mffus.org",
+          "https://satkaniaconnect.org"
+        ]
+      }
     ]
   }
   </script>
